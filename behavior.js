@@ -54,6 +54,15 @@
 
 // htmlでJSの変数を使う　その2
 // 変数の演算を代入してみる。
-let x = 2;
-let y = 30
-document.getElementById("test").textContent = x + y;
+
+// let x = 2;
+// let y = 30
+// document.getElementById("test").textContent = x + y;
+
+// 配列に持って行くまでの前段階としての変数への値の代入
+const tax = 1.1;
+const applePrice = 100;
+const orangePrice = 60;
+
+document.getElementById("apple-total-amount").textContent = applePrice * tax;
+document.getElementById("orange-total-amount").textContent = orangePrice * tax;
