@@ -20,5 +20,23 @@
 ///////////////////
 // Debugのための関数2つ
 
-console.log("test");
-alert(3 * 31);
+// console.log("test");
+// alert(3 * 31);
+
+
+///////////////////
+// 変数
+
+// // letは上書き可能
+// let x = 2;
+// x = 50;
+// let y = 3;
+// console.log(x + y);
+// // => 53
+
+// // constは上書き不可　定数だから
+const x = 2;
+x = 50;
+let y = 3;
+console.log(x + y);
+// => Uncaught TypeError: Assignment to constant variable.
