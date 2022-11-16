@@ -49,4 +49,11 @@
 // htmlでの記述はJSによって上書きされる。
 // これもある意味変数的な使い方。
 
-document.getElementById("test").textContent = "input word test"
+// document.getElementById("test").textContent = "input word test";
+
+
+// htmlでJSの変数を使う　その2
+// 変数の演算を代入してみる。
+let x = 2;
+let y = 30
+document.getElementById("test").textContent = x + y;
