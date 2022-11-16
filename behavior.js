@@ -14,4 +14,11 @@
 // 『defer』属性をつけることでhtmlを読み込んでからJSを効かせる。
 // JSの記述しシンプルになる。
 
-document.querySelectior("ul l");
+// document.querySelectior("ul l");
+
+
+///////////////////
+// Debugのための関数2つ
+
+console.log("test");
+alert(3 * 31);
