@@ -8,6 +8,7 @@
 //   document.querySelectior("ul l");
 // });
 
+
 ///////////////////
 // JSの使い方　その2
 // htmlのheadの中に記述する。
@@ -27,16 +28,25 @@
 ///////////////////
 // 変数
 
-// // letは上書き可能
+// letは上書き可能
+
 // let x = 2;
 // x = 50;
 // let y = 3;
 // console.log(x + y);
 // // => 53
 
-// // constは上書き不可　定数だから
-const x = 2;
-x = 50;
-let y = 3;
-console.log(x + y);
-// => Uncaught TypeError: Assignment to constant variable.
+// constは上書き不可　定数だから
+
+// const x = 2;
+// x = 50;
+// let y = 3;
+// console.log(x + y);
+// // => Uncaught TypeError: Assignment to constant variable.
+
+
+// htmlでJSの変数を使う　その1
+// htmlでの記述はJSによって上書きされる。
+// これもある意味変数的な使い方。
+
+document.getElementById("test").textContent = "input word test"
