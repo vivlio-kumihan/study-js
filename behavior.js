@@ -155,8 +155,8 @@
 //   document.getElementById("number").appendChild(li);
 // }
 
-// htmlに順番に配列の中身を表示させる。
-// foreachは無いようだ。地道に書けということ。
+// // htmlに順番に配列の中身を表示させる。
+// // foreachは無いようだ。地道に書けということ。
 
 // const fruit = ["apple", "banana", "orange", "grape", "melon"];
 // for (let i = 0; i < fruit.length; i++) {
@@ -165,13 +165,21 @@
 //   document.getElementById("number").appendChild(li);
 // }
 
-// forEachでやってみる。
+// // forEachでやってみる。
 
-const fruit = ["apple", "banana", "orange", "grape", "melon"];
-fruit.forEach((name, idx) => {
+// const fruit = ["apple", "banana", "orange", "grape", "melon"];
+// fruit.forEach((name, idx) => {
+//   let li = document.createElement("li");
+//   li.textContent = fruit[idx];
+//   document.getElementById("fruits").appendChild(li);
+// })
+
+// for ofでやってみる。
+
+const fruit = ["apple", "banana", "orange", "grape", "melon", "strawberry"];
+for (item of fruit) {
   let li = document.createElement("li");
-  li.textContent = fruit[idx];
+  li.textContent = item;
   document.getElementById("fruits").appendChild(li);
-})
 
-
+}
