@@ -75,58 +75,63 @@
 
 // 対象をクリックするとコンソールに結果が表示される。
 // document.getElementById("test").addEventListener("click", function(){
-  //   console.log("testをクリックしました。");
-  // });
+//   console.log("testをクリックしました。");
+// });
+
+
+// // 対象をクリックするとhtmlが書きかわる。
+// let obj = document.getElementById("test");
   
-  
-  // // 対象をクリックするとhtmlが書きかわる。
-  // let obj = document.getElementById("test");
-  
-  // obj.addEventListener("click", function(){
-    //   // 複数の処理を書ける。
-    //   obj.textContent = "クリックするとテキストが書き変わる。";
-    //   // 各順番よりalertの方が優先される。
-    //   alert("クリックするとテキストが書き変わる。")
-    // });
+// obj.addEventListener("click", function(){
+//   // 複数の処理を書ける。
+//   obj.textContent = "クリックするとテキストが書き変わる。";
+//   // 各順番よりalertの方が優先される。
+//   alert("クリックするとテキストが書き変わる。")
+// });
     
     
-    // this
+// this
     
-    // document.getElementById("test").addEventListener("click", function(){
-      //   // 『this』には、注目しているオブジェクトが入っている。
-      //   this.textContent = "クリックするとテキストが書き変わる。";
-      //   alert("クリックするとテキストが書き変わる。")
-      // });
+// document.getElementById("test").addEventListener("click", function(){
+//   // 『this』には、注目しているオブジェクトが入っている。
+//   this.textContent = "クリックするとテキストが書き変わる。";
+//   alert("クリックするとテキストが書き変わる。")
+// });
 
 
 ///////////////////
 // 配列
 
-// 配列を生成させる。
+// // 配列を生成させる。
+// const fruit = ["apple", "banana", "orange"];
+// console.log(fruit);
+// let hello = "hello";
+
+// // (3)['apple', 'banana', 'orange']
+// // 0:"apple"
+// // 1:"banana"
+// // 2:"orange"
+// // length:3
+// // [[Prototype]]:Array(0)
+
+// インデックスを使って呼び出す。
 const fruit = ["apple", "banana", "orange"];
-console.log(fruit);
+document.getElementById("test").textContent = fruit[0];
 
-// (3)['apple', 'banana', 'orange']
-// 0:"apple"
-// 1:"banana"
-// 2:"orange"
-// length:3
-// [[Prototype]]:Array(0)
+// // 配列の最後にオブジェクトを追加する。
+// fruit.push("grape");
+// fruit.push("melon");
+// console.log(fruit);
 
-// 配列の最後にオブジェクトを追加する。
-fruit.push("grape");
-fruit.push("melon");
-console.log(fruit);
+// // 配列の最初に追加する。
+// fruit.unshift("grape");
+// fruit.unshift("melon");
+// console.log(fruit);
 
-// 配列の最初に追加する。
-fruit.unshift("grape");
-fruit.unshift("melon");
-console.log(fruit);
+// // 配列の最後を削除する
+// fruit.pop();
+// console.log(fruit);
 
-// 配列の最後を削除する
-fruit.pop();
-console.log(fruit);
-
-// 配列の最初を削除する
-fruit.shift();
-console.log(fruit);
+// // 配列の最初を削除する
+// fruit.shift();
+// console.log(fruit);
