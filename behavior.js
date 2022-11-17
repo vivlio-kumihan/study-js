@@ -81,17 +81,17 @@
 
 // // 対象をクリックするとhtmlが書きかわる。
 // let obj = document.getElementById("test");
-  
+
 // obj.addEventListener("click", function(){
 //   // 複数の処理を書ける。
 //   obj.textContent = "クリックするとテキストが書き変わる。";
 //   // 各順番よりalertの方が優先される。
 //   alert("クリックするとテキストが書き変わる。")
 // });
-    
-    
+
+
 // this
-    
+
 // document.getElementById("test").addEventListener("click", function(){
 //   // 『this』には、注目しているオブジェクトが入っている。
 //   this.textContent = "クリックするとテキストが書き変わる。";
@@ -114,9 +114,9 @@
 // // length:3
 // // [[Prototype]]:Array(0)
 
-// インデックスを使って呼び出す。
-const fruit = ["apple", "banana", "orange"];
-document.getElementById("test").textContent = fruit[0];
+// // インデックスを使って呼び出す。
+// const fruit = ["apple", "banana", "orange"];
+// document.getElementById("test").textContent = fruit[0];
 
 // // 配列の最後にオブジェクトを追加する。
 // fruit.push("grape");
@@ -135,3 +135,12 @@ document.getElementById("test").textContent = fruit[0];
 // // 配列の最初を削除する
 // fruit.shift();
 // console.log(fruit);
+
+
+///////////////////
+// forを使った繰り返し
+
+num = [1,2,3,4,5,6,7,8,9]
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
