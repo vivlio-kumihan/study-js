@@ -144,13 +144,23 @@
 //   console.log(i);
 // }
 
-// htmlに順番に任意の数字を表示させる。
+// // htmlに順番に任意の数字を表示させる。
 
-for (let i = 0; i < 10; i++) {
-  // liの要素を生成させて、そこへ数値を代入していけば数字を出すリストができるはず。
+// for (let i = 0; i < 10; i++) {
+//   // liの要素を生成させて、そこへ数値を代入していけば数字を出すリストができるはず。
+//   let li = document.createElement("li");
+//   // そのliタグに対して文字列を代入するには『textContent』メソッドを充てて代入する。
+//   li.textContent = i;
+//   // 生成したliタグを順次ulタグ内へ追加する。『appendChild』配列の末尾に追加的なもののよう。作法がpythonと一緒。
+//   document.getElementById("number").appendChild(li);
+// }
+
+// htmlに順番に配列の中身を表示させる。
+// foreachは無いようだ。地道に書けということ。
+
+const fruit = ["apple", "banana", "orange", "grape", "melon"];
+for (let i = 0; i < fruit.length; i++) {
   let li = document.createElement("li");
-  // そのliタグに対して文字列を代入するには『textContent』メソッドを充てて代入する。
-  li.textContent = i;
-  // 生成したliタグを順次ulタグ内へ追加する。『appendChild』配列の末尾に追加的なもののよう。作法がpythonと一緒。
+  li.textContent = fruit[i];
   document.getElementById("number").appendChild(li);
 }
