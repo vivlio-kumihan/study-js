@@ -60,9 +60,31 @@
 // document.getElementById("test").textContent = x + y;
 
 // 配列に持って行くまでの前段階としての変数への値の代入
-const tax = 1.1;
-const applePrice = 100;
-const orangePrice = 60;
 
-document.getElementById("apple-total-amount").textContent = applePrice * tax;
-document.getElementById("orange-total-amount").textContent = orangePrice * tax;
+// const tax = 1.1;
+// const applePrice = 100;
+// const orangePrice = 60;
+
+// document.getElementById("apple-total-amount").textContent = applePrice * tax;
+// document.getElementById("orange-total-amount").textContent = orangePrice * tax;
+
+
+///////////////////
+// 関数　addEventListener
+// 対象をクリックすると定義した関数を起動させる。
+
+// 対象をクリックするとコンソールに結果が表示される。
+// document.getElementById("test").addEventListener("click", function(){
+//   console.log("testをクリックしました。");
+// });
+  
+  
+// 対象をクリックするとhtmlが書きかわる。
+let obj = document.getElementById("test");
+
+obj.addEventListener("click", function(){
+  // 複数の処理を書ける。
+  obj.textContent = "クリックするとテキストが書き変わる。";
+  // 各順番よりalertの方が優先される。
+  alert("クリックするとテキストが書き変わる。")
+});
