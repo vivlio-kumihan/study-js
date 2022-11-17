@@ -79,12 +79,21 @@
 // });
   
   
-// 対象をクリックするとhtmlが書きかわる。
-let obj = document.getElementById("test");
+// // 対象をクリックするとhtmlが書きかわる。
+// let obj = document.getElementById("test");
 
-obj.addEventListener("click", function(){
-  // 複数の処理を書ける。
-  obj.textContent = "クリックするとテキストが書き変わる。";
-  // 各順番よりalertの方が優先される。
+// obj.addEventListener("click", function(){
+//   // 複数の処理を書ける。
+//   obj.textContent = "クリックするとテキストが書き変わる。";
+//   // 各順番よりalertの方が優先される。
+//   alert("クリックするとテキストが書き変わる。")
+// });
+
+
+// this
+
+document.getElementById("test").addEventListener("click", function(){
+  // 『this』には、注目しているオブジェクトが入っている。
+  this.textContent = "クリックするとテキストが書き変わる。";
   alert("クリックするとテキストが書き変わる。")
 });
