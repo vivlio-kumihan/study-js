@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* センターセンターのやりかた　221118時点で最初に思いついたやり方。 */
+/* #switchClasses {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 30%;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  background-color: aquamarine;
+  border-radius: 3px;
+} */
+
+/* justify-content => 左右センター */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 80vh;
+}
+
+#switchClasses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  padding: 10px 15px;
+  background-color: aquamarine;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#switchClasses.add-elem {
+  color: #fff;
+  background-color: brown;
+}

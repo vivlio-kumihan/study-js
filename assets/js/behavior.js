@@ -143,9 +143,9 @@
 // for (let i = 0; i < 10; i++) {
   //   console.log(i);
   // }
-  
+
   // // htmlに順番に任意の数字を表示させる。
-  
+
   // for (let i = 0; i < 10; i++) {
     //   // liの要素を生成させて、そこへ数値を代入していけば数字を出すリストができるはず。
     //   let li = document.createElement("li");
@@ -164,9 +164,9 @@
   //   li.textContent = fruit[i];
   //   document.getElementById("number").appendChild(li);
   // }
-  
+
   // // forEachでやってみる。
-  
+
   // const fruit = ["apple", "banana", "orange", "grape", "melon"];
   // fruit.forEach((name, idx) => {
 //   let li = document.createElement("li");
@@ -210,14 +210,23 @@
 // objHead = document.head;
 // console.log(objHead);
 
-// 要素を取得し該当の値を変更する。
+// // 要素を取得し該当の値を変更する。
+
+// // objSelects = document.querySelectorAll("ul li a");
+// // for (let i = 0; i < objSelects.length; i++) {
+//   //   objSelects[i].textContent = "hello" + (i + 1);
+//   // }
 
 // objSelects = document.querySelectorAll("ul li a");
-// for (let i = 0; i < objSelects.length; i++) {
-  //   objSelects[i].textContent = "hello" + (i + 1);
-  // }
-  
-objSelects = document.querySelectorAll("ul li a");
-objSelects.forEach((element, idx) => {
-  element.textContent = "hello" + (idx + 1);
+// objSelects.forEach((element, idx) => {
+//   element.textContent = "hello" + (idx + 1);
+// });
+
+
+// // ///////////////////
+// クラスを切り替える
+
+// クラスを切り替えに応じて要素を変更する
+document.getElementById("switchClasses").addEventListener("click",  function(){
+  this.textContent = "Click! Click! Click! You click here!";
 });
