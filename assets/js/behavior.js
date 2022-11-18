@@ -271,9 +271,15 @@
 //   console.log(element);
 // }
 
-// 『children』で取得したインスタンスが、『forEach』ではリストと判断されない。
-// 『querySelectorAll』を使って回避する。
-const list = document.querySelectorAll(".list li");
-list.forEach((element, idx) => {
-  console.log(element);
-});
+// // 『children』で取得したインスタンスが、『forEach』ではリストと判断されない。
+// // 『querySelectorAll』を使って回避する。
+// const list = document.querySelectorAll(".list li");
+// list.forEach((element, idx) => {
+//   console.log(element);
+// });
+
+
+// 最初・最後よ要をを取得する。　firstElementChild, lastElementChild
+const list = document.querySelector(".list");
+console.log(list.firstElementChild);
+console.log(list.lastElementChild);
