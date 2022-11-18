@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-.container {
+/* .container {
   position: relative;
   width: 100%;
   height: 100vh;
-}
+} */
 
 /* センターセンターのやりかた　221118時点で最初に思いついたやり方。 */
 /* #switchClasses {
@@ -21,7 +21,8 @@
   border-radius: 3px;
 } */
 
-/* justify-content => 左右センター */
+/* justify-content: center; => 左右センター */
+/* align-items: center; 　　=>上下センター */
 
 .container {
   display: flex;
@@ -32,7 +33,7 @@
   height: 80vh;
 }
 
-li {
+/* li {
   width: 200px;
   padding: 5px 0;
   text-align: center;
@@ -41,4 +42,10 @@ li {
 }
 li:not(:first-of-type) {
   margin-top: 10px;
+} */
+
+#test {
+  font-size: 200px;
+  font-family: 'Yuji Boku', serif;
+  color: darkgreen;
 }

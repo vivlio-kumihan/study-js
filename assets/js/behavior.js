@@ -301,9 +301,20 @@
 
 // random() 　0-1までの乱数を生成させる関数
 const randomNum = Math.random();
+
 // 生成される乱数の範囲
 // * 5 => 0 - 4.99999.........
 // * 10 => 0 - 9.99999.........
 // * 100 => 0 - 99.99999.........
 // Math.floor(をを使って1-10までの整数を出力する。
-console.log(Math.floor(randomNum * 10 + 1));
+// console.log(Math.floor(randomNum * 10 + 1));
+
+// document.getElementById("test").textContent = Math.floor(randomNum * 10 + 1);
+
+// おみくじのコードで『配列』と『乱数』を使ってみる。
+document.getElementById("test").addEventListener("click", function(){
+  console.log("testをクリックしました。");
+});
+const result = ["大吉", "中吉", "小吉", "末吉", "凶", "大凶"];
+document.getElementById("test").textContent = result[Math.floor(randomNum * 6)];
+
