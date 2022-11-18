@@ -264,16 +264,16 @@
 // ///////////////////
 // 子要素・兄弟要素・親要素を取得する
 
-// children 『ul』の子要素『li』を取得する。
-const list = document.querySelector(".list").children;
-for (let idx = 0; idx < list.length; idx++) {
-  const element = list[idx];
-  console.log(element);  
-}
-
-
-// const list = document.querySelectorAll(".list li");
-// list.forEach((element, idx) => {
+// // children 『ul』の子要素『li』を取得する。
+// const list = document.querySelector(".list").children;
+// for (let idx = 0; idx < list.length; idx++) {
+//   const element = list[idx];
 //   console.log(element);
-// });
+// }
 
+// 『children』で取得したインスタンスが、『forEach』ではリストと判断されない。
+// 『querySelectorAll』を使って回避する。
+const list = document.querySelectorAll(".list li");
+list.forEach((element, idx) => {
+  console.log(element);
+});
