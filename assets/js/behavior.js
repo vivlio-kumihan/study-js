@@ -184,8 +184,8 @@
 // }
 
 
-// // ///////////////////
-// // 要素を取得する
+// ///////////////////
+// 要素を取得する
 
 // // ID
 // objId = document.getElementById("menu");
@@ -223,7 +223,7 @@
 // });
 
 
-// // ///////////////////
+// ///////////////////
 // classList クラスを切り替える
 
 // // クリックすると要素を変更する。
@@ -249,13 +249,31 @@
 //   this.classList.toggle("add-elem");
 // });
 
-// クラスの付け替え。クラスを付いていなと時には付与し、付いていと時は削除させる挙動。
-document.getElementById("switchClasses").addEventListener("click",  function(){
-  this.textContent = "Click! Click! Click! You clicked here!";
-  this.classList.toggle("add-elem");
-  const list = document.querySelectorAll("#list li");
-  list.forEach((element, idx) => {
-    element.textContent = "Hello World!" + (idx + 1)
-    element.classList.toggle("opty");
-  });
-});
+// // クラスの付け替え。クラスを付いていなと時には付与し、付いていと時は削除させる挙動。
+// document.getElementById("switchClasses").addEventListener("click",  function(){
+//   this.textContent = "Click! Click! Click! You clicked here!";
+//   this.classList.toggle("add-elem");
+//   const list = document.querySelectorAll("#list li");
+//   list.forEach((element, idx) => {
+//     element.textContent = "Hello World!" + (idx + 1)
+//     element.classList.toggle("opty");
+//   });
+// });
+
+
+// ///////////////////
+// 子要素・兄弟要素・親要素を取得する
+
+// children 『ul』の子要素『li』を取得する。
+const list = document.querySelector(".list").children;
+for (let idx = 0; idx < list.length; idx++) {
+  const element = list[idx];
+  console.log(element);  
+}
+
+
+// const list = document.querySelectorAll(".list li");
+// list.forEach((element, idx) => {
+//   console.log(element);
+// });
+

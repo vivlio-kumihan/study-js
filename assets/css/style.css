@@ -25,7 +25,6 @@
 
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -33,36 +32,13 @@
   height: 80vh;
 }
 
-#switchClasses {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 20px;
-  margin-bottom: 20px;
-  padding: 10px 15px;
-  background-color: aquamarine;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-#switchClasses.add-elem {
-  color: #fff;
-  background-color: brown;
-}
-
 li {
-  padding: 5px 15px;
+  width: 200px;
+  padding: 5px 0;
   text-align: center;
   background-color: antiquewhite;
   border-radius: 3px;
-  opacity: 0;
 }
 li:not(:first-of-type) {
   margin-top: 10px;
-}
-
-.opty {
-  opacity: 1;
-  transition: 1.5s;
 }
