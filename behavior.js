@@ -141,14 +141,14 @@
 // // forを使った繰り返し
 
 // for (let i = 0; i < 10; i++) {
-//   console.log(i);
-// }
-
-// // htmlに順番に任意の数字を表示させる。
-
-// for (let i = 0; i < 10; i++) {
-//   // liの要素を生成させて、そこへ数値を代入していけば数字を出すリストができるはず。
-//   let li = document.createElement("li");
+  //   console.log(i);
+  // }
+  
+  // // htmlに順番に任意の数字を表示させる。
+  
+  // for (let i = 0; i < 10; i++) {
+    //   // liの要素を生成させて、そこへ数値を代入していけば数字を出すリストができるはず。
+    //   let li = document.createElement("li");
 //   // そのliタグに対して文字列を代入するには『textContent』メソッドを充てて代入する。
 //   li.textContent = i;
 //   // 生成したliタグを順次ulタグ内へ追加する。『appendChild』配列の末尾に追加的なもののよう。作法がpythonと一緒。
@@ -160,26 +160,53 @@
 
 // const fruit = ["apple", "banana", "orange", "grape", "melon"];
 // for (let i = 0; i < fruit.length; i++) {
-//   let li = document.createElement("li");
-//   li.textContent = fruit[i];
-//   document.getElementById("number").appendChild(li);
-// }
-
-// // forEachでやってみる。
-
-// const fruit = ["apple", "banana", "orange", "grape", "melon"];
-// fruit.forEach((name, idx) => {
+  //   let li = document.createElement("li");
+  //   li.textContent = fruit[i];
+  //   document.getElementById("number").appendChild(li);
+  // }
+  
+  // // forEachでやってみる。
+  
+  // const fruit = ["apple", "banana", "orange", "grape", "melon"];
+  // fruit.forEach((name, idx) => {
 //   let li = document.createElement("li");
 //   li.textContent = fruit[idx];
 //   document.getElementById("fruits").appendChild(li);
 // })
 
-// for ofでやってみる。
+// // for ofでやってみる。
 
-const fruit = ["apple", "banana", "orange", "grape", "melon", "strawberry"];
-for (item of fruit) {
-  let li = document.createElement("li");
-  li.textContent = item;
-  document.getElementById("fruits").appendChild(li);
+// const fruit = ["apple", "banana", "orange", "grape", "melon", "strawberry"];
+// for (item of fruit) {
+//   let li = document.createElement("li");
+//   li.textContent = item;
+//   document.getElementById("fruits").appendChild(li);
+// }
 
-}
+
+// ///////////////////
+// 要素を取得する
+
+// ID
+objId = document.getElementById("menu");
+console.log(objId);
+
+// CSSセレクター
+objSelector = document.querySelector("li");
+console.log(objSelector);
+
+objSelctAll = document.querySelectorAll("li");
+console.log(objSelctAll);
+
+// HTML
+objHTML = document.documentElement;
+console.log(objHTML);
+
+// CSSセレクターのbody
+objBody = document.body;
+console.log(objBody);
+
+// CSSセレクターのhead
+objHead = document.head;
+console.log(objHead);
+
