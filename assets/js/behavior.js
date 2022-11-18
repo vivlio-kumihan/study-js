@@ -226,14 +226,20 @@
 // // ///////////////////
 // クラスを切り替える
 
-// // クラスを切り替えに応じて要素を変更する
+// // クリックすると要素を変更する。
 // document.getElementById("switchClasses").addEventListener("click",  function(){
 //   this.textContent = "Click! Click! Click! You click here!";
 // });
 
-// クラスを切り替えに応じてクラスを付加する。
+// // クラスを切り替えに応じてクラスを付加する。
+// document.getElementById("switchClasses").addEventListener("click",  function(){
+//   this.textContent = "Click! Click! Click! You click here!";
+//   this.classList.add("add-elem");
+// });
+
+// クラスを削除する。
 document.getElementById("switchClasses").addEventListener("click",  function(){
   this.textContent = "Click! Click! Click! You click here!";
-  this.classList.add("add-elem");
+  this.classList.remove("add-elem");
 });
 
