@@ -278,16 +278,18 @@
 //   console.log(element);
 // });
 
-
 // // 最初・最後の要素を取得する。　firstElementChild, lastElementChild
 // const list = document.querySelector(".list");
 // console.log(list.firstElementChild);
 // console.log(list.lastElementChild);
 
-// 次の兄弟要素を取得する。　nextElementSibling
-const list1 = document.querySelector(".list li");
-console.log(list1.nextElementSibling);
+// // 次の兄弟要素を取得する。　nextElementSibling
+// const list1 = document.querySelector(".list li");
+// console.log(list1.nextElementSibling);
 
-// 前の兄弟要素を取得する。　previousElementSibling
-const list2 = document.querySelector(".list");
-console.log(list2.lastElementChild.previousElementSibling);
+// // 前の兄弟要素を取得する。　previousElementSibling
+// const list2 = document.querySelector(".list");
+// console.log(list2.lastElementChild.previousElementSibling);
+
+const list = document.querySelector(".list li");
+console.log(list.parentNode);
