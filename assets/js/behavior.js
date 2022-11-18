@@ -160,15 +160,15 @@
 
 // const fruit = ["apple", "banana", "orange", "grape", "melon"];
 // for (let i = 0; i < fruit.length; i++) {
-  //   let li = document.createElement("li");
-  //   li.textContent = fruit[i];
-  //   document.getElementById("number").appendChild(li);
-  // }
+//   let li = document.createElement("li");
+//   li.textContent = fruit[i];
+//   document.getElementById("number").appendChild(li);
+// }
 
-  // // forEachでやってみる。
+// // forEachでやってみる。
 
-  // const fruit = ["apple", "banana", "orange", "grape", "melon"];
-  // fruit.forEach((name, idx) => {
+// const fruit = ["apple", "banana", "orange", "grape", "melon"];
+// fruit.forEach((name, idx) => {
 //   let li = document.createElement("li");
 //   li.textContent = fruit[idx];
 //   document.getElementById("fruits").appendChild(li);
@@ -224,22 +224,38 @@
 
 
 // // ///////////////////
-// クラスを切り替える
+// classList クラスを切り替える
 
 // // クリックすると要素を変更する。
 // document.getElementById("switchClasses").addEventListener("click",  function(){
-//   this.textContent = "Click! Click! Click! You click here!";
+//   this.textContent = "Click! Click! Click! You clicked here!";
 // });
 
 // // クラスを切り替えに応じてクラスを付加する。
 // document.getElementById("switchClasses").addEventListener("click",  function(){
-//   this.textContent = "Click! Click! Click! You click here!";
+//   this.textContent = "Click! Click! Click! You clicked here!";
 //   this.classList.add("add-elem");
 // });
 
-// クラスを削除する。
-document.getElementById("switchClasses").addEventListener("click",  function(){
-  this.textContent = "Click! Click! Click! You click here!";
-  this.classList.remove("add-elem");
-});
+// // クラスを削除する。
+// document.getElementById("switchClasses").addEventListener("click",  function(){
+//   this.textContent = "Click! Click! Click! You clicked here!";
+//   this.classList.remove("add-elem");
+// });
 
+// // クラスの付け替え。クラスを付いていなと時には付与し、付いていと時は削除させる挙動。
+// document.getElementById("switchClasses").addEventListener("click",  function(){
+//   this.textContent = "Click! Click! Click! You clicked here!";
+//   this.classList.toggle("add-elem");
+// });
+
+// クラスの付け替え。クラスを付いていなと時には付与し、付いていと時は削除させる挙動。
+document.getElementById("switchClasses").addEventListener("click",  function(){
+  this.textContent = "Click! Click! Click! You clicked here!";
+  this.classList.toggle("add-elem");
+  const list = document.querySelectorAll("#list li");
+  list.forEach((element, idx) => {
+    element.textContent = "Hello World!" + (idx + 1)
+    element.classList.toggle("opty");
+  });
+});
