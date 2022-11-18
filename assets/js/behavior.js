@@ -291,5 +291,19 @@
 // const list2 = document.querySelector(".list");
 // console.log(list2.lastElementChild.previousElementSibling);
 
-const list = document.querySelector(".list li");
-console.log(list.parentNode);
+// // 親要素を取得する。　parentNode
+// const list = document.querySelector(".list li");
+// console.log(list.parentNode);
+
+
+// ///////////////////
+// 乱数と配列
+
+// random() 　0-1までの乱数を生成させる関数
+const randomNum = Math.random();
+// 生成される乱数の範囲
+// * 5 => 0 - 4.99999.........
+// * 10 => 0 - 9.99999.........
+// * 100 => 0 - 99.99999.........
+// Math.floor(をを使って1-10までの整数を出力する。
+console.log(Math.floor(randomNum * 10 + 1));
