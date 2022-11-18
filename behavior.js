@@ -184,29 +184,40 @@
 // }
 
 
-// ///////////////////
-// 要素を取得する
+// // ///////////////////
+// // 要素を取得する
 
-// ID
-objId = document.getElementById("menu");
-console.log(objId);
+// // ID
+// objId = document.getElementById("menu");
+// console.log(objId);
 
-// CSSセレクター
-objSelector = document.querySelector("li");
-console.log(objSelector);
+// // CSSセレクター
+// objSelector = document.querySelector("li");
+// console.log(objSelector);
 
-objSelctAll = document.querySelectorAll("li");
-console.log(objSelctAll);
+// objSelctAll = document.querySelectorAll("li");
+// console.log(objSelctAll);
 
-// HTML
-objHTML = document.documentElement;
-console.log(objHTML);
+// // HTML
+// objHTML = document.documentElement;
+// console.log(objHTML);
 
-// CSSセレクターのbody
-objBody = document.body;
-console.log(objBody);
+// // CSSセレクターのbody
+// objBody = document.body;
+// console.log(objBody);
 
-// CSSセレクターのhead
-objHead = document.head;
-console.log(objHead);
+// // CSSセレクターのhead
+// objHead = document.head;
+// console.log(objHead);
 
+// 要素を取得し該当の値を変更する。
+
+// objSelects = document.querySelectorAll("ul li a");
+// for (let i = 0; i < objSelects.length; i++) {
+  //   objSelects[i].textContent = "hello" + (i + 1);
+  // }
+  
+objSelects = document.querySelectorAll("ul li a");
+objSelects.forEach((element, idx) => {
+  element.textContent = "hello" + (idx + 1);
+});
