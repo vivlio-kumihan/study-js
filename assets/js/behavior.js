@@ -324,18 +324,50 @@
 // });
 
 
-///////////////////
-// if
+// ///////////////////
+// // if
 
-const idTest = document.getElementById("test")
-const number = Math.floor(Math.random() * 10 + 1);
+// const idTest = document.getElementById("test")
+// const number = Math.floor(Math.random() * 10 + 1);
 
-if (number === 10) {
-  idTest.textContent = "スコアーは、" + number + "です。";
-} else if (number === 1) {
-  idTest.textContent = "スコアーは、" + number + "です。";
-} else if (number <= 5) {
-  idTest.textContent = "スコアーは、5以下です。" + number;
-} else {
-  idTest.textContent = "スコアーは、" + number + "です。";
-}
+// if (number === 10) {
+  //   idTest.textContent = "スコアーは、" + number + "です。";
+  // } else if (number === 1) {
+    //   idTest.textContent = "スコアーは、" + number + "です。";
+    // } else if (number <= 5) {
+//   idTest.textContent = "スコアーは、5以下です。" + number;
+// } else {
+  //   idTest.textContent = "スコアーは、" + number + "です。";
+  // }
+  
+// 比較演算子
+
+// const idTest = document.getElementById("test")
+// const a = 2, b = 2;
+
+// if (a > b) {
+//   idTest.textContent = a + "は、" + b + "より大きい。";
+// } else if (a < b) {
+//   idTest.textContent = a + "は、" + b + "より小さい。";
+// } else if (a === b) {
+//   idTest.textContent = a + "と" + b + "は同じ値。";
+// }
+
+// const idTest = document.getElementById("test")
+// const a = 2, b = 2;
+// const result = a < b;
+
+// if (result) {
+//   idTest.textContent = a + "は、" + b + "より大きい。";
+// } else {
+//   idTest.textContent = a + "と" + b + "は同じ値。";
+// }
+
+// <     より大きい
+// >     より小さい
+// <=    以上
+// >=    以下
+// ===   等しい
+// !==   等しく無い
+// &&    かつ
+// ||    または
