@@ -327,8 +327,15 @@
 ///////////////////
 // if
 
-const score = 20;
-if (score === 20) {
-  console.log("yes");
-  document.getElementById("test").textContent = "スコアーは、" + score + "です。";
+const idTest = document.getElementById("test")
+const number = Math.floor(Math.random() * 10 + 1);
+
+if (number === 10) {
+  idTest.textContent = "スコアーは、" + number + "です。";
+} else if (number === 1) {
+  idTest.textContent = "スコアーは、" + number + "です。";
+} else if (number <= 5) {
+  idTest.textContent = "スコアーは、5以下です。" + number;
+} else {
+  idTest.textContent = "スコアーは、" + number + "です。";
 }
