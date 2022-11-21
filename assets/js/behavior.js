@@ -392,15 +392,52 @@
 //   idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
 // }
 
-// 模範解答　その1
-const idIns = document.getElementById("weather");
+// // 模範解答　その1 if文で書く
+// const weatherIns = document.getElementById("weather");
+// const msgIns = document.getElementById("message");
+// const weathers = ["晴れ", "曇り", "雨", "雷雨"],
+//       idx = Math.floor(Math.random() * weathers.length),
+//       weather = weathers[idx];
+
+// weatherIns.textContent = "今日の天気は" + weather + "です。";
+
+// if (weather === "晴れ") {
+//   msgIns.textContent = "レンズを向ける方向は太陽ですよ。";
+// } else if (weather === "曇り") {
+//   msgIns.textContent = "光が上手くまわってくれるといいですね。";
+// } else if (weather === "雨") {
+//   msgIns.textContent = "雨と時でしかと撮れないシズル感を狙ってみてはいかがか。";
+// } else {
+//   msgIns.textContent = "溜まった現象作業をやってみてはいかがか。";
+// }
+
+// 模範解答　その2　switch文で書く。
+const weatherIns = document.getElementById("weather");
+const msgIns = document.getElementById("message");
 const weathers = ["晴れ", "曇り", "雨", "雷雨"],
-idx = Math.floor(Math.random() * weathers.length),
-weather = weathers[idx];
+      idx = Math.floor(Math.random() * weathers.length),
+      weather = weathers[idx];
 
-idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+weatherIns.textContent = "今日の天気は" + weather + "です。";
 
+function put2msgIns(text) {
+  msgIns.textContent = text;
+}
 
+switch (weather) {
+  case "晴れ":
+    put2msgIns("レンズを向ける方向は太陽ですよ。");
+    break;
+  case "曇り":
+    put2msgIns("光が上手くまわってくれるといいですね。");
+    break;
+  case "雨":
+    put2msgIns("雨と時でしかと撮れないシズル感を狙ってみてはいかがか。");
+    break;
+  default:
+    put2msgIns("溜まった現象作業をやってみてはいかがか。");
+    break;
+}
 
 
 
