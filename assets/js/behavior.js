@@ -315,7 +315,7 @@
 // document.getElementById("switchButton").addEventListener("click", function () {
   //   this.textContent = "本日の運勢は…";
   //   this.classList.toggle("add-behavior");
-  
+
   //   const res = document.querySelector(".result");
   //   const result = ["大吉", "中吉", "小吉", "末吉", "凶", "大凶"];
   //   let resNum = Math.floor(randomNum * 6);
@@ -411,34 +411,68 @@
 //   msgIns.textContent = "溜まった現象作業をやってみてはいかがか。";
 // }
 
-// 模範解答　その2　switch文で書く。
-const weatherIns = document.getElementById("weather");
-const msgIns = document.getElementById("message");
-const weathers = ["晴れ", "曇り", "雨", "雷雨"],
-      idx = Math.floor(Math.random() * weathers.length),
-      weather = weathers[idx];
+// // 模範解答　その2　switch文で書く。
+// const weatherIns = document.getElementById("weather");
+// const msgIns = document.getElementById("message");
+// const weathers = ["晴れ", "曇り", "雨", "雷雨"],
+//       idx = Math.floor(Math.random() * weathers.length),
+//       weather = weathers[idx];
 
-weatherIns.textContent = "今日の天気は" + weather + "です。";
+// weatherIns.textContent = "今日の天気は" + weather + "です。";
 
-function put2msgIns(text) {
-  msgIns.textContent = text;
+// function put2msgIns(text) {
+//   msgIns.textContent = text;
+// }
+
+// switch (weather) {
+//   case "晴れ":
+//     put2msgIns("レンズを向ける方向は太陽ですよ。");
+//     break;
+//   case "曇り":
+//     put2msgIns("光が上手くまわってくれるといいですね。");
+//     break;
+//   case "雨":
+//     put2msgIns("雨と時でしかと撮れないシズル感を狙ってみてはいかがか。");
+//     break;
+//   default:
+//     put2msgIns("溜まった現象作業をやってみてはいかがか。");
+//     break;
+// }
+
+
+// // 模範解答？　その3　switch文で書く。
+
+// 入力した値を出力する。
+
+// const fruit = ["apple", "banana", "orange", "grape", "melon", "strawberry"];
+// for (item of fruit) {
+//   let li = document.createElement("li");
+//   li.textContent = item;
+//   document.getElementById("fruits").appendChild(li);
+// }
+
+const menu = ["coffee", "tea", "juice", "toast", "cake", "flied-potato", "other"]
+for (item of menu) {
+  let li = document.createElement("li");
+  li.textContent = item;
+  document.querySelector(".menu").appendChild(li);
 }
 
-switch (weather) {
-  case "晴れ":
-    put2msgIns("レンズを向ける方向は太陽ですよ。");
-    break;
-  case "曇り":
-    put2msgIns("光が上手くまわってくれるといいですね。");
-    break;
-  case "雨":
-    put2msgIns("雨と時でしかと撮れないシズル感を狙ってみてはいかがか。");
-    break;
-  default:
-    put2msgIns("溜まった現象作業をやってみてはいかがか。");
-    break;
+const showInput = () => {
+  const inPut = document.getElementById("in-put").value;
+  let price = "";
+
+  switch (inPut) {
+    case "coffee": case "tea": case "juice":
+      price = "350円" ;
+      break;
+    case "toast": case "cake": case "flied-potato":
+      price = "600円";
+      break;
+    default:
+      price = "1000円";
+  }
+  const outPut = inPut + "は『" + price + "』です。";
+  console.log(outPut);
+  document.getElementById("out-put").textContent = outPut;
 }
-
-
-
-
