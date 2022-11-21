@@ -341,6 +341,7 @@
   // }
 
 
+// ///////////////////
 // 比較演算子
 
 // const idTest = document.getElementById("test")
@@ -374,6 +375,7 @@
 // ||    または
 
 
+// ///////////////////
 // // switc文
 
 // // 最初に自分で考えたif文
@@ -477,6 +479,7 @@
 // });
 
 
+// ///////////////////
 // // 加算演算子
 
 // // クリックしたら行動を起こす。
@@ -496,7 +499,7 @@
 //   count--;
 //   document.getElementById("result").textContent = count;
 // });
-  
+
 // // 加算代入
 
 // // nずつ増やす。
@@ -507,11 +510,39 @@
 //   document.getElementById("result").textContent = count;
 // });
 
-// 減算代入
+// // 減算代入
 
-let count = 100;
-document.getElementById("button").addEventListener("click", function() {
-  // count = count - 2; 
-  count -= 2;
-  document.getElementById("result").textContent = count;
-});
+// let count = 100;
+// document.getElementById("button").addEventListener("click", function() {
+//   // count = count - 2; 
+//   count -= 2;
+//   document.getElementById("result").textContent = count;
+// });
+
+
+// ///////////////////
+// 切り捨て、切り上げ、四捨五入、冪乗
+
+// 切り捨て
+// 小数点以下を切り捨てる。
+// 注意点は、マイナスの数値の場合（『-1.9』）、
+// floorは、切り上げて『-2』
+// truncは、切り捨てて『-1』となる。
+num = -1.9;
+console.log(Math.floor(num));
+console.log(Math.trunc(num));
+
+// 切り上げ
+// 注意点は、マイナスの数値の場合（『-1.9』）、
+// 切り上げだから『-1』へ『上がる』
+num = -1.9;
+console.log(Math.ceil(num));
+
+// 四捨五入
+num = -1.4;
+console.log(Math.round(num));
+
+// 冪乗
+num = 3;
+console.log(Math.pow(num, 3));
+
