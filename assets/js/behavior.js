@@ -339,7 +339,8 @@
 // } else {
   //   idTest.textContent = "スコアーは、" + number + "です。";
   // }
-  
+
+
 // 比較演算子
 
 // const idTest = document.getElementById("test")
@@ -371,3 +372,35 @@
 // !==   等しく無い
 // &&    かつ
 // ||    または
+
+
+// // switc文
+
+// // 最初に自分で考えたif文
+// // 模範解を見て自分は考えすぎ。もっとシンプルししないと。
+
+// const idIns = document.getElementById("weather");
+// const weathers = ["晴れ", "曇り", "雨", "雷雨"],
+//       idx = Math.floor(Math.random() * weathers.4);
+// if (idx === 0) {
+//   idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+// } else if (idx === 1) {
+//   idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+// } else if (idx === 2) {
+//   idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+// } else {
+//   idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+// }
+
+// 模範解答　その1
+const idIns = document.getElementById("weather");
+const weathers = ["晴れ", "曇り", "雨", "雷雨"],
+idx = Math.floor(Math.random() * weathers.length),
+weather = weathers[idx];
+
+idIns.textContent = "今日の天気は" + weathers[idx] + "です。";
+
+
+
+
+
