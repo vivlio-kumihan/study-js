@@ -470,8 +470,48 @@
 // }
 
 
-// 入力した値を出力する　その2
-// クリックしたら行動を起こす。
+// // 入力した値を出力する　その2
+// // クリックしたら行動を起こす。
+// document.getElementById("button").addEventListener("click", function() {
+//   document.getElementById("result").textContent = 331;
+// });
+
+
+// // 加算演算子
+
+// // クリックしたら行動を起こす。
+// // count = count++　こんなことをしてはダメ。
+// let count = 0;
+// document.getElementById("button").addEventListener("click", function() {
+//   // count = count + 1; 
+//   count++
+//   document.getElementById("result").textContent = count;
+// });
+
+// // 減算演算子
+
+// let count = 100;
+// document.getElementById("button").addEventListener("click", function() {
+//   // count = count - 1; 
+//   count--;
+//   document.getElementById("result").textContent = count;
+// });
+  
+// // 加算代入
+
+// // nずつ増やす。
+// let count = 0;
+// document.getElementById("button").addEventListener("click", function() {
+//   // count = count + 2; 
+//   count += 2;
+//   document.getElementById("result").textContent = count;
+// });
+
+// 減算代入
+
+let count = 100;
 document.getElementById("button").addEventListener("click", function() {
-  document.getElementById("result").textContent = 331;
+  // count = count - 2; 
+  count -= 2;
+  document.getElementById("result").textContent = count;
 });
