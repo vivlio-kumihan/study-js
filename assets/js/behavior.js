@@ -442,37 +442,36 @@
 
 // // 模範解答？　その3　switch文で書く。
 
-// 入力した値を出力する。
+// 入力した値を出力する　その1
 
-// const fruit = ["apple", "banana", "orange", "grape", "melon", "strawberry"];
-// for (item of fruit) {
+// const menu = ["coffee", "tea", "juice", "toast", "cake", "flied-potato", "other"]
+// for (item of menu) {
 //   let li = document.createElement("li");
 //   li.textContent = item;
-//   document.getElementById("fruits").appendChild(li);
+//   document.querySelector(".menu").appendChild(li);
 // }
 
-const menu = ["coffee", "tea", "juice", "toast", "cake", "flied-potato", "other"]
-for (item of menu) {
-  let li = document.createElement("li");
-  li.textContent = item;
-  document.querySelector(".menu").appendChild(li);
-}
+// const showInput = () => {
+//   const inPut = document.getElementById("in-put").value;
+//   let price = "";
 
-const showInput = () => {
-  const inPut = document.getElementById("in-put").value;
-  let price = "";
+//   switch (inPut) {
+//     case "coffee": case "tea": case "juice":
+//       price = "350円" ;
+//       break;
+//     case "toast": case "cake": case "flied-potato":
+//       price = "600円";
+//       break;
+//     default:
+//       price = "1000円";
+//   }
+//   const outPut = inPut + "は『" + price + "』です。";
+//   document.getElementById("out-put").textContent = outPut;
+// }
 
-  switch (inPut) {
-    case "coffee": case "tea": case "juice":
-      price = "350円" ;
-      break;
-    case "toast": case "cake": case "flied-potato":
-      price = "600円";
-      break;
-    default:
-      price = "1000円";
-  }
-  const outPut = inPut + "は『" + price + "』です。";
-  console.log(outPut);
-  document.getElementById("out-put").textContent = outPut;
-}
+
+// 入力した値を出力する　その2
+// クリックしたら行動を起こす。
+document.getElementById("button").addEventListener("click", function() {
+  document.getElementById("result").textContent = 331;
+});
