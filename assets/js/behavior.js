@@ -642,12 +642,27 @@
 // console.log(calTax(100))
 // document.getElementById("price").textContent = calTax(100)
 
-// その2
-// クリックしたら行動を起こす。
+// // その2
+// // クリックしたら行動を起こす。
+// const tax = 1.1
+// function calTax(price) {
+//   return Math.floor(price * tax)
+// }
+// document.getElementById("button").addEventListener("click", function () {
+//   document.getElementById("result").textContent = calTax(100)
+// });
+
+// その3
+// 入力したら結果をHTMLに返す。
 const tax = 1.1
 function calTax(price) {
   return Math.floor(price * tax)
 }
-document.getElementById("button").addEventListener("click", function () {
-  document.getElementById("result").textContent = calTax(100)
-});
+
+const showInput = () => {
+  // const inPut = ""
+  inPut = document.getElementById("in-put").value
+  priceOnTax = calTax(inPut)
+  stm = inPut + "円の税込み価格は、" + priceOnTax + "円です。"
+  document.getElementById("out-put").textContent = stm
+}
