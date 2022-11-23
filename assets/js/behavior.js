@@ -677,8 +677,19 @@ function calTax(price) {
 // // 該当する最初の一つ目の要素にしか値は代入されない。
 // document.getElementById("result").textContent = "100円の消費税込みの価格は110円です。"
 
-function insertText(itemPrice) {
-  document.getElementById("result").textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
+// // タグにテキストを投げる関数を定義する。
+// function insertText(itemPrice) {
+//   document.getElementById("result").textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
+// }
+
+// insertText(100)
+
+// 引数を使って複数に書き分けて行く。
+function insertText(itemPrice, elem) {
+  document.querySelector(elem).textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
 }
 
-insertText(100)
+insertText(100, "#result.price1")
+insertText(200, "#result.price2")
+insertText(300, "#result.price3")
+
