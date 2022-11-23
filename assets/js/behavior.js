@@ -623,24 +623,24 @@
 // ///////////////////
 // // 関数
 
-// 定義する。
-// この書き方だったらreturnしなくてもいい。でも現実的では無い。
-function sayGreet(greet = "hello") {
-  console.log(greet)
-}
-
-sayGreet()
-sayGreet("goodbye")
-
-// // 消費税を計算する。
-// // その1
-// const tax = 1.1
-// function calTax(price) {
-//   return Math.floor(price * tax)
+// // 定義する。
+// // この書き方だったらreturnしなくてもいい。でも現実的では無い。
+// function sayGreet(greet = "hello") {
+//   console.log(greet)
 // }
 
-// console.log(calTax(100))
-// document.getElementById("price").textContent = calTax(100)
+// sayGreet()
+// sayGreet("goodbye")
+
+// 消費税を計算する。
+// その1
+const tax = 1.1
+function calTax(price) {
+  return Math.floor(price * tax)
+}
+
+console.log(calTax(100))
+document.getElementById("price").textContent = calTax(100)
 
 // // その2
 // // クリックしたら行動を起こす。
