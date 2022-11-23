@@ -632,18 +632,22 @@
 // sayGreet()
 // sayGreet("goodbye")
 
-// 消費税を計算する。
-// その1
+// // 消費税を計算する。
+// // その1
+// const tax = 1.1
+// function calTax(price) {
+//   return Math.floor(price * tax)
+// }
+
+// console.log(calTax(100))
+// document.getElementById("price").textContent = calTax(100)
+
+// その2
+// クリックしたら行動を起こす。
 const tax = 1.1
 function calTax(price) {
   return Math.floor(price * tax)
 }
-
-console.log(calTax(100))
-document.getElementById("price").textContent = calTax(100)
-
-// // その2
-// // クリックしたら行動を起こす。
-// document.getElementById("button").addEventListener("click", function () {
-//   document.getElementById("result").textContent = calTax(100)
-// });
+document.getElementById("button").addEventListener("click", function () {
+  document.getElementById("result").textContent = calTax(100)
+});
