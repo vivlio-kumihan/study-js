@@ -23,7 +23,25 @@ body {
   margin: 0 auto;
 }
 
-ul {
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40%;
+  height: 10rem;
+  font-size: 2rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 0,800;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  border-radius: .5rem;
+}
+
+
+
+/* ul {
   width: 40%;
   padding: 3rem;
   background-color: #eee;
@@ -36,7 +54,7 @@ li {
 
 li:not(:first-of-type) {
   margin-top: 1rem;
-}
+} */
 
 /* #button {
   display: flex;

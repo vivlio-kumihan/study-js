@@ -571,16 +571,49 @@
 //   i++
 // }
 
-// HTMLの中に任意の要素がある限り上から順に吐き出させる。
-// ただし、ちょっとした罠あり。
-// 終端を知らないから無限に回って呼出をやる。
-while (document.querySelector("#list li")) {
-  console.log(document.querySelector("#list li"));
-  document.querySelector("#list li").remove();
-}
-
-// と、こういう風には書けない。無限になってまう。
-// const ins = document.querySelector("#list li")
-// while (ins) {
-//   ins.remove()
+// // HTMLの中に任意の要素がある限り上から順に吐き出させる。
+// // ただし、ちょっとした罠あり。
+// // 終端を知らないから無限に回って呼出をやる。
+// while (document.querySelector("#list li")) {
+//   console.log(document.querySelector("#list li"));
+//   document.querySelector("#list li").remove();
 // }
+
+// // と、こういう風には書けない。無限になってまう。
+// // const ins = document.querySelector("#list li")
+// // while (ins) {
+// //   ins.remove()
+// // }
+
+
+// // CSSを変更・削除・取得
+
+// // CSSの属性を『変更』
+// //  JSでCSSの属性を変更すると、
+// //  element style扱いになるので優先度が高くなる。
+
+// // 要素.style.プロパティ名 = "値"
+// document.getElementById("box").style.opacity = ".3"
+// document.getElementById("box").style.width = "200px"
+// document.getElementById("box").style.fontSize = "5rem"
+// document.getElementById("box").style.backgroundColor = "blue"
+
+
+// // 要素.style.cssText = "CSSの記述"
+// document.getElementById("box").style.cssText = "width: 80%; height: 20rem; background-color: red;"
+
+// // HTMLに直書きしているCSSについて書き方があることに留意しておく。なんかある。
+// // element styleを消す場合。
+// document.getElementById("box").style.width = ""
+
+// // element styleを取得する場合。
+// // 連想配列でelement styleで変更しているプロパティがわかる。
+// console.log(document.getElementById("box").style)
+
+// // 連想配列でelement styleで変更しているプロパティの『値』がわかる。
+// console.log(document.getElementById("box").style.width)
+
+// element style以外 = CSSで指定した値を取得する場合。
+// トリガにするために必要な値が欲しい場合に多用すると思われる。
+console.log(window.getComputedStyle(document.getElementById("box")).width)
+console.log(window.getComputedStyle(document.getElementById("box")).alignItems)
