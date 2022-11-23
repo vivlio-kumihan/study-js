@@ -586,6 +586,7 @@
 // // }
 
 
+// ///////////////////
 // // CSSを変更・削除・取得
 
 // // CSSの属性を『変更』
@@ -613,7 +614,36 @@
 // // 連想配列でelement styleで変更しているプロパティの『値』がわかる。
 // console.log(document.getElementById("box").style.width)
 
-// element style以外 = CSSで指定した値を取得する場合。
-// トリガにするために必要な値が欲しい場合に多用すると思われる。
-console.log(window.getComputedStyle(document.getElementById("box")).width)
-console.log(window.getComputedStyle(document.getElementById("box")).alignItems)
+// // element style以外 = CSSで指定した値を取得する場合。
+// // トリガにするために必要な値が欲しい場合に多用すると思われる。
+// console.log(window.getComputedStyle(document.getElementById("box")).width)
+// console.log(window.getComputedStyle(document.getElementById("box")).alignItems)
+
+
+// ///////////////////
+// // 関数
+
+// 定義する。
+// この書き方だったらreturnしなくてもいい。でも現実的では無い。
+function sayGreet(greet = "hello") {
+  console.log(greet)
+}
+
+sayGreet()
+sayGreet("goodbye")
+
+// // 消費税を計算する。
+// // その1
+// const tax = 1.1
+// function calTax(price) {
+//   return Math.floor(price * tax)
+// }
+
+// console.log(calTax(100))
+// document.getElementById("price").textContent = calTax(100)
+
+// // その2
+// // クリックしたら行動を起こす。
+// document.getElementById("button").addEventListener("click", function () {
+//   document.getElementById("result").textContent = calTax(100)
+// });
