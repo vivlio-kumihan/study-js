@@ -667,12 +667,12 @@
 //   document.getElementById("out-put").textContent = stm
 // }
 
-// その4
-// 引数の入れ方の工夫でシンプルな構造で出力の振り分けができる。
-const tax = 1.1
-function calTax(price) {
-  return Math.floor(price * tax)
-}
+// // その4
+// // 引数の入れ方の工夫でシンプルな構造で出力の振り分けができる。
+// const tax = 1.1
+// function calTax(price) {
+//   return Math.floor(price * tax)
+// }
 
 // // 該当する最初の一つ目の要素にしか値は代入されない。
 // document.getElementById("result").textContent = "100円の消費税込みの価格は110円です。"
@@ -684,12 +684,30 @@ function calTax(price) {
 
 // insertText(100)
 
-// 引数を使って複数に書き分けて行く。
-function insertText(itemPrice, elem) {
-  document.querySelector(elem).textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
+// // 引数を使って複数に書き分けて行く。
+// function insertText(itemPrice, elem) {
+//   document.querySelector(elem).textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
+// }
+
+// insertText(100, "#result.price1")
+// insertText(200, "#result.price2")
+// insertText(300, "#result.price3")
+
+
+
+///////////////////
+//　連想配列
+
+// 連想配列の生成方法と呼び出し方
+const item = {
+  name: "power book pro",
+  price: 200000
 }
 
-insertText(100, "#result.price1")
-insertText(200, "#result.price2")
-insertText(300, "#result.price3")
+// dotで繋て呼び出す。
+// document.getElementById("name").textContent = "商品名は、" + item.name + "です。";
+// document.getElementById("price").textContent = "価格は、" + item.price + "円です。";
 
+// よく見よ呼び出し方
+document.getElementById("name").textContent = "商品名は、" + item["name"] + "です。";
+document.getElementById("price").textContent = "価格は、" + item["price"] + "円です。";
