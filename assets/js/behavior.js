@@ -701,13 +701,20 @@
 // 連想配列の生成方法と呼び出し方
 const item = {
   name: "power book pro",
-  price: 200000
+  price: 200000,
+  campaign: true
 }
 
-// dotで繋て呼び出す。
-// document.getElementById("name").textContent = "商品名は、" + item.name + "です。";
-// document.getElementById("price").textContent = "価格は、" + item.price + "円です。";
+// // dotで繋て呼び出す。
+// document.getElementById("name").textContent = "商品名は、" + item.name + "です。"
+// document.getElementById("price").textContent = "価格は、" + item.price + "円です。"
 
-// よく見よ呼び出し方
-document.getElementById("name").textContent = "商品名は、" + item["name"] + "です。";
-document.getElementById("price").textContent = "価格は、" + item["price"] + "円です。";
+// // よく見る呼び出し方
+// document.getElementById("name").textContent = "商品名は、" + item["name"] + "です。"
+// document.getElementById("price").textContent = "価格は、" + item["price"] + "円です。"
+
+// 真ち値もプロパティーにすることができる。
+if (item["campaign"]) {
+  console.log("yes")
+  document.getElementById("campaign").textContent = "大売り出し中！"
+}
