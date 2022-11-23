@@ -674,5 +674,11 @@ function calTax(price) {
   return Math.floor(price * tax)
 }
 
-// 該当する最初の一つ目の要素にしか値は代入されない。
-document.getElementById("result").textContent = "100円の消費税込みの価格は110円です。"
+// // 該当する最初の一つ目の要素にしか値は代入されない。
+// document.getElementById("result").textContent = "100円の消費税込みの価格は110円です。"
+
+function insertText(itemPrice) {
+  document.getElementById("result").textContent = itemPrice + "円の消費税込みの価格は" + calTax(itemPrice) + "円です。"
+}
+
+insertText(100)
