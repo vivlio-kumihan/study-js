@@ -652,17 +652,27 @@
 //   document.getElementById("result").textContent = calTax(100)
 // });
 
-// その3
-// 入力したら結果をHTMLに返す。
+// // その3
+// // 入力したら結果をHTMLに返す。
+// const tax = 1.1
+// function calTax(price) {
+//   return Math.floor(price * tax)
+// }
+
+// const showInput = () => {
+//   // const inPut = ""
+//   inPut = document.getElementById("in-put").value
+//   priceOnTax = calTax(inPut)
+//   stm = inPut + "円の税込み価格は、" + priceOnTax + "円です。"
+//   document.getElementById("out-put").textContent = stm
+// }
+
+// その4
+// 引数の入れ方の工夫でシンプルな構造で出力の振り分けができる。
 const tax = 1.1
 function calTax(price) {
   return Math.floor(price * tax)
 }
 
-const showInput = () => {
-  // const inPut = ""
-  inPut = document.getElementById("in-put").value
-  priceOnTax = calTax(inPut)
-  stm = inPut + "円の税込み価格は、" + priceOnTax + "円です。"
-  document.getElementById("out-put").textContent = stm
-}
+// 該当する最初の一つ目の要素にしか値は代入されない。
+document.getElementById("result").textContent = "100円の消費税込みの価格は110円です。"
