@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 html {
   font-size: 15px;
@@ -18,12 +18,27 @@ body {
   justify-content: center;
   align-items: center;
   
-  width: 40%;
+  width: 100%;
   height: 80vh;
   margin: 0 auto;
 }
 
-#button {
+ul {
+  width: 40%;
+  padding: 3rem;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+li {
+  text-align: center;
+}
+
+li:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+/* #button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +65,7 @@ body {
   height: 5rem;
   font-size: 2rem;
   background-color: #eee;
-}
+} */
 
 /* h3 {
   margin-bottom: 1rem;

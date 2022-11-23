@@ -523,26 +523,64 @@
 // ///////////////////
 // 切り捨て、切り上げ、四捨五入、冪乗
 
-// 切り捨て
-// 小数点以下を切り捨てる。
-// 注意点は、マイナスの数値の場合（『-1.9』）、
-// floorは、切り上げて『-2』
-// truncは、切り捨てて『-1』となる。
-num = -1.9;
-console.log(Math.floor(num));
-console.log(Math.trunc(num));
+// // 切り捨て
+// // 小数点以下を切り捨てる。
+// // 注意点は、マイナスの数値の場合（『-1.9』）、
+// // floorは、切り上げて『-2』
+// // truncは、切り捨てて『-1』となる。
+// num = -1.9;
+// console.log(Math.floor(num));
+// console.log(Math.trunc(num));
 
-// 切り上げ
-// 注意点は、マイナスの数値の場合（『-1.9』）、
-// 切り上げだから『-1』へ『上がる』
-num = -1.9;
-console.log(Math.ceil(num));
+// // 切り上げ
+// // 注意点は、マイナスの数値の場合（『-1.9』）、
+// // 切り上げだから『-1』へ『上がる』
+// num = -1.9;
+// console.log(Math.ceil(num));
 
-// 四捨五入
-num = -1.4;
-console.log(Math.round(num));
+// // 四捨五入
+// num = -1.4;
+// console.log(Math.round(num));
 
-// 冪乗
-num = 3;
-console.log(Math.pow(num, 3));
+// // 冪乗
+// num = 3;
+// console.log(Math.pow(num, 3));
 
+
+// ///////////////////
+// // while
+
+// // 最近の録画なんだろうか　文末の『；』がなくなった。
+
+// // 文法　その1
+// let i = 1
+// while (i < 10) {
+//   console.log("hello" + i) 
+//   i++
+// }
+
+// // while 要素がある間処理を続けるのに便利。
+// // forEachでいいのでは？　とは思うが、とりあえずwhileで少し試す。
+
+// // リストの要素を抽出してみる。  
+// let i = 0
+// const ins = document.querySelectorAll("#list li")
+
+// while (i < ins.length) {
+//   console.log(ins[i])
+//   i++
+// }
+
+// HTMLの中に任意の要素がある限り上から順に吐き出させる。
+// ただし、ちょっとした罠あり。
+// 終端を知らないから無限に回って呼出をやる。
+while (document.querySelector("#list li")) {
+  console.log(document.querySelector("#list li"));
+  document.querySelector("#list li").remove();
+}
+
+// と、こういう風には書けない。無限になってまう。
+// const ins = document.querySelector("#list li")
+// while (ins) {
+//   ins.remove()
+// }
