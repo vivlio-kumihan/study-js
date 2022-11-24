@@ -763,6 +763,17 @@ const item = {
 // });
 // document.getElementById("parts2").textContent = str;
 
-// 配列を『join』で繋いでstringで運用する。
+// // 配列を『join』で繋いでstringで運用する。
+// const items = item["parts"].join("・")
+// document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
+
+// 値を変更する。
+item["parts"].pop()
+item["parts"][1] = "TV"
+
 const items = item["parts"].join("・")
 document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
+
+
+// console.log(item);
+// console.table(item);
