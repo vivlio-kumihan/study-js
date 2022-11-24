@@ -698,12 +698,18 @@
 ///////////////////
 //　連想配列
 
-// 連想配列の生成方法と呼び出し方
-const item = {
-  name: "power book pro",
-  price: 200000,
-  campaign: true
-}
+////////// JSの連想配列の定義
+////////// ・連想配列 => オブジェクト　配列はその派生。
+////////// ・オブジェクトは、名と値がペアになった『プロパティ』を持つ。
+////////// ・プロパティの値に、『関数』を持つことができる。
+////////// ・これをメソッドと呼ぶ。
+
+// // 連想配列の生成方法と呼び出し方
+// const item = {
+//   name: "power book pro",
+//   price: 200000,
+//   campaign: true
+// }
 
 // // dotで繋て呼び出す。
 // document.getElementById("name").textContent = "商品名は、" + item.name + "です。"
@@ -713,8 +719,9 @@ const item = {
 // document.getElementById("name").textContent = "商品名は、" + item["name"] + "です。"
 // document.getElementById("price").textContent = "価格は、" + item["price"] + "円です。"
 
-// 真ち値もプロパティーにすることができる。
-if (item["campaign"]) {
-  console.log("yes")
-  document.getElementById("campaign").textContent = "大売り出し中！"
-}
+// // 真偽値もプロパティーにすることができる。
+// if (item["campaign"]) {
+//   console.log("yes")
+//   document.getElementById("campaign").textContent = "大売り出し中！"
+// }
+
