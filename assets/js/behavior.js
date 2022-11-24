@@ -767,13 +767,13 @@ const item = {
 // const items = item["parts"].join("・")
 // document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
 
-// 値を変更する。
-item["parts"].pop()
-item["parts"][1] = "TV"
+// // 値を変更する。
+// item["parts"].pop()
+// item["parts"][1] = "TV"
 
-const items = item["parts"].join("・")
-document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
+// const items = item["parts"].join("・")
+// document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
 
-
-// console.log(item);
-// console.table(item);
+// 連想配列の内容を確認する。console.log(object); console.table(object);
+console.log(item);
+console.table(item);
