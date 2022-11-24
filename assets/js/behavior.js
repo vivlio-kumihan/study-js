@@ -725,20 +725,20 @@ const item = {
 //   document.getElementById("campaign").textContent = "大売り出し中！"
 // }
 
-// プロパティが配列の場合、値の取り出しHTML上でリストで表現する。
-// for
-for (let i = 0; i < item["parts"].length; i++) {
-  let li = document.createElement("li");
-  li.textContent = item["parts"][i];
-  document.getElementById("parts").appendChild(li);
-}
-
-// // forEach
-// item["parts"].forEach(element => {
+// // プロパティが配列の場合、値の取り出しHTML上でリストで表現する。
+// // for
+// for (let i = 0; i < item["parts"].length; i++) {
 //   let li = document.createElement("li");
-//   li.textContent = element;
+//   li.textContent = item["parts"][i];
 //   document.getElementById("parts").appendChild(li);
-// });
+// }
+
+// forEach
+item["parts"].forEach(element => {
+  let li = document.createElement("li");
+  li.textContent = element;
+  document.getElementById("parts").appendChild(li);
+});
 
 
 // // 配列のプロパティを『・』で繋いだ文字列にして出力する。
