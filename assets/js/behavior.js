@@ -733,24 +733,36 @@ const item = {
 //   document.getElementById("parts").appendChild(li);
 // }
 
+// // forEach
+// item["parts"].forEach(element => {
+//   let li = document.createElement("li");
+//   li.textContent = element;
+//   document.getElementById("parts").appendChild(li);
+// });
+
+
+// 配列になっているプロパティを『・』で繋いだ文字列にして出力する。文字列に追記する。
+// for・forEach版
+// for
+str = "";
+for (let i = 0; i < item["parts"].length; i++) {
+  str += item["parts"][i];
+  if (i !== item["parts"].length - 1) {
+    str += "・";
+  }
+}
+document.getElementById("parts2").textContent = str;
+
 // forEach
-item["parts"].forEach(element => {
-  let li = document.createElement("li");
-  li.textContent = element;
-  document.getElementById("parts").appendChild(li);
+str = "";
+item["parts"].forEach((elem, idx) => {
+  str += elem;
+  if (idx !== item["parts"].length - 1) {
+    str += "・";
+  }
 });
+document.getElementById("parts2").textContent = str;
 
-
-// // 配列のプロパティを『・』で繋いだ文字列にして出力する。
-// // その1
-// str = "";
-// for (let i = 0; i < item["parts"].length; i++) {
-//   str += item["parts"][i];
-//   if (i !== item["parts"].length - 1) {
-//     str += "・";
-//   }
-// }
-// document.getElementById("parts2").textContent = str;
 
 // const items = item["parts"].join("・")
 // document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
