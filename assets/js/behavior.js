@@ -698,18 +698,19 @@
 ///////////////////
 //　連想配列
 
-////////// JSの連想配列の定義
+////////// JS連想配列の定義
 ////////// ・連想配列 => オブジェクト　配列はその派生。
 ////////// ・オブジェクトは、名と値がペアになった『プロパティ』を持つ。
 ////////// ・プロパティの値に、『関数』を持つことができる。
 ////////// ・これをメソッドと呼ぶ。
 
-// // 連想配列の生成方法と呼び出し方
-// const item = {
-//   name: "power book pro",
-//   price: 200000,
-//   campaign: true
-// }
+// 連想配列の生成方法と呼び出し方
+const item = {
+  name: "power book pro",
+  price: 200000,
+  campaign: true,
+  parts: ["HD", "メモリー", "CPU"]
+}
 
 // // dotで繋て呼び出す。
 // document.getElementById("name").textContent = "商品名は、" + item.name + "です。"
@@ -721,7 +722,35 @@
 
 // // 真偽値もプロパティーにすることができる。
 // if (item["campaign"]) {
-//   console.log("yes")
 //   document.getElementById("campaign").textContent = "大売り出し中！"
 // }
 
+// プロパティが配列の場合、値の取り出しHTML上でリストで表現する。
+// for
+for (let i = 0; i < item["parts"].length; i++) {
+  let li = document.createElement("li");
+  li.textContent = item["parts"][i];
+  document.getElementById("parts").appendChild(li);
+}
+
+// // forEach
+// item["parts"].forEach(element => {
+//   let li = document.createElement("li");
+//   li.textContent = element;
+//   document.getElementById("parts").appendChild(li);
+// });
+
+
+// // 配列のプロパティを『・』で繋いだ文字列にして出力する。
+// // その1
+// str = "";
+// for (let i = 0; i < item["parts"].length; i++) {
+//   str += item["parts"][i];
+//   if (i !== item["parts"].length - 1) {
+//     str += "・";
+//   }
+// }
+// document.getElementById("parts2").textContent = str;
+
+// const items = item["parts"].join("・")
+// document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
