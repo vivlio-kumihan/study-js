@@ -694,7 +694,6 @@
 // insertText(300, "#result.price3")
 
 
-
 ///////////////////
 //　連想配列
 
@@ -704,13 +703,13 @@
 ////////// ・プロパティの値に、『関数』を持つことができる。
 ////////// ・これをメソッドと呼ぶ。
 
-// 連想配列の生成方法と呼び出し方
-const item = {
-  name: "power book pro",
-  price: 200000,
-  campaign: true,
-  parts: ["HD", "メモリー", "CPU"]
-}
+// // 連想配列の生成方法と呼び出し方
+// const item = {
+//   name: "power book pro",
+//   price: 200000,
+//   campaign: true,
+//   parts: ["HD", "メモリー", "CPU"]
+// }
 
 // // dotで繋て呼び出す。
 // document.getElementById("name").textContent = "商品名は、" + item.name + "です。"
@@ -774,6 +773,23 @@ const item = {
 // const items = item["parts"].join("・")
 // document.getElementById("parts2").textContent = item["name"] + "を構成しているパーツは、" + items + "です。"
 
-// 連想配列の内容を確認する。console.log(object); console.table(object);
-console.log(item);
-console.table(item);
+// // 連想配列の内容を確認する。 console.table(object);
+// console.log(item)
+// console.table(item)
+
+
+///////////////////
+//　型
+
+// 型を明示する。　typeof
+let input = document.getElementById("input").textContent
+console.log(typeof input) 
+// => string
+// 文字列の結合になる。
+document.getElementById("output").textContent = input + 1000
+
+// 型を変換する。　Number(ins), String(ins)
+console.log(Number(input))
+input = Number(input)
+// 数ととして計算する。
+document.getElementById("output").textContent = input + 1000
