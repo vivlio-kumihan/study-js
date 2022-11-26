@@ -837,7 +837,34 @@
 //   document.querySelector("ul.list-view").appendChild(li)
 // });
 
-// n日後の時間を取得する。=> setDate, getDate()
+
+// // n日後の時間を取得する。=> setDate, getDate()
+// const thisTime = new Date()
+
+// function outPutDate(ins) {
+//   const week = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"]
+//   let year = ins.getFullYear() + "年"
+//   let month = ins.getMonth() + 1 + "月"
+//   let day = ins.getDate() + "日"
+//   let nthDay = week[ins.getDay()]
+//   let hours = ins.getHours() + "時"
+//   let minutes = ins.getMinutes() + "分"
+//   let seconds = ins.getSeconds() + "秒"
+//   let elem = year + month + day + nthDay + hours + minutes + seconds
+//   return elem
+// }
+
+// // 今の時間を取得する。
+// console.log(outPutDate(thisTime))
+// document.querySelector(".today").textContent = outPutDate(thisTime)
+
+// // 1日後の時間を取得する。
+// thisTime.setDate(thisTime.getDate() + 1) 
+// document.querySelector(".future-day").textContent = outPutDate(thisTime)
+// // n日後の時間を取得する。=> setDate, getDate()
+
+
+// 期間を取得する。
 const thisTime = new Date()
 
 function outPutDate(ins) {
@@ -853,10 +880,24 @@ function outPutDate(ins) {
   return elem
 }
 
-// 今の時間を取得する。
-console.log(outPutDate(thisTime))
-document.querySelector(".today").textContent = outPutDate(thisTime)
+// 期間を読み取れた単位で変換する。
+const targetTime = new Date(2045, (3 - 1), 31)
+// nマイクロ秒 => 秒
+let eraSec = (targetTime - thisTime) / 1000
+// 秒 => 分
+let eraMin = eraSec / 60
+// 分 => 時
+let eraHor = eraMin / 60
+// 時 => 日
+let eraDay = eraHor / 24
+// 日 => 年
+let eraYer = eraDay / 365
 
-// 1日後の時間を取得する。
-thisTime.setDate(thisTime.getDate() + 1) 
-document.querySelector(".tomorrow").textContent = outPutDate(thisTime)
+console.log(eraYer)
+
+// まとめると、
+// 小数点を切り上てておく。
+diff =  Math.ceil((targetTime - thisTime) / (1000 * 60 * 60 * 24 * 365))
+console.log(diff)
+
+document.querySelector(".diff").textContent = `2045年まであと${diff}年です。`
