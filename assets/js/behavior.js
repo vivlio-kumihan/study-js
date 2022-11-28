@@ -925,10 +925,20 @@ console.log(document.querySelectorAll("ul li a"))
 //   console.log(element.hasAttribute("class"))
 // });
 
-// if文を用いて、属性の付与を振り分ける。
-arr = document.querySelectorAll("ul li a")
-arr.forEach(element => {
-  if (element.getAttribute("href") !== "/") {
-    element.setAttribute("target", "_brank")
-  }
-});
+// // if文を用いて、属性の付与を振り分ける。
+// arr = document.querySelectorAll("ul li a")
+// arr.forEach(element => {
+//   if (element.getAttribute("href") !== "/") {
+//     element.setAttribute("target", "_brank")
+//   }
+// });
+
+// ///////////////////
+// //　スクロールしたら消去する。
+
+// windowオブジェクトに対してscrollイベントを追加する。
+
+// "scroll"イベントを取得する。
+window.addEventListener("scroll", function() {
+  console.log("hello")
+})
