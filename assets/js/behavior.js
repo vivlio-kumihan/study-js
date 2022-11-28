@@ -934,11 +934,18 @@ console.log(document.querySelectorAll("ul li a"))
 // });
 
 // ///////////////////
-// //　スクロールしたら消去する。
+// //　スクロールをきっかけに振る舞いをする。
 
 // windowオブジェクトに対してscrollイベントを追加する。
 
-// "scroll"イベントを取得する。
+// // "scroll"イベントを取得する。
+// window.addEventListener("scroll", function() {
+//   console.log("hello")
+// })
+
+// 画面上端からの"scroll"位置(px)を取得する。数値をし下に表示させる。position: fixed;
 window.addEventListener("scroll", function() {
-  console.log("hello")
+  let scroll = document.documentElement.scrollTop
+  console.log(scroll)
+  document.getElementById("scroll-position").textContent = scroll
 })
