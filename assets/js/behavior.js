@@ -864,40 +864,63 @@
 // // n日後の時間を取得する。=> setDate, getDate()
 
 
-// 期間を取得する。
-const thisTime = new Date()
+// // 期間を取得する。
+// const thisTime = new Date()
 
-function outPutDate(ins) {
-  const week = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"]
-  let year = ins.getFullYear() + "年"
-  let month = ins.getMonth() + 1 + "月"
-  let day = ins.getDate() + "日"
-  let nthDay = week[ins.getDay()]
-  let hours = ins.getHours() + "時"
-  let minutes = ins.getMinutes() + "分"
-  let seconds = ins.getSeconds() + "秒"
-  let elem = year + month + day + nthDay + hours + minutes + seconds
-  return elem
-}
+// function outPutDate(ins) {
+//   const week = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"]
+//   let year = ins.getFullYear() + "年"
+//   let month = ins.getMonth() + 1 + "月"
+//   let day = ins.getDate() + "日"
+//   let nthDay = week[ins.getDay()]
+//   let hours = ins.getHours() + "時"
+//   let minutes = ins.getMinutes() + "分"
+//   let seconds = ins.getSeconds() + "秒"
+//   let elem = year + month + day + nthDay + hours + minutes + seconds
+//   return elem
+// }
 
-// 期間を読み取れた単位で変換する。
-const targetTime = new Date(2045, (3 - 1), 31)
-// nマイクロ秒 => 秒
-let eraSec = (targetTime - thisTime) / 1000
-// 秒 => 分
-let eraMin = eraSec / 60
-// 分 => 時
-let eraHor = eraMin / 60
-// 時 => 日
-let eraDay = eraHor / 24
-// 日 => 年
-let eraYer = eraDay / 365
+// // 期間を読み取れた単位で変換する。
+// const targetTime = new Date(2045, (3 - 1), 31)
+// // nマイクロ秒 => 秒
+// let eraSec = (targetTime - thisTime) / 1000
+// // 秒 => 分
+// let eraMin = eraSec / 60
+// // 分 => 時
+// let eraHor = eraMin / 60
+// // 時 => 日
+// let eraDay = eraHor / 24
+// // 日 => 年
+// let eraYer = eraDay / 365
 
-console.log(eraYer)
+// console.log(eraYer) 
 
-// まとめると、
-// 小数点を切り上てておく。
-diff =  Math.ceil((targetTime - thisTime) / (1000 * 60 * 60 * 24 * 365))
-console.log(diff)
+// // まとめると、
+// // 小数点を切り上てておく。
+// diff =  Math.ceil((targetTime - thisTime) / (1000 * 60 * 60 * 24 * 365))
+// console.log(diff)
 
-document.querySelector(".diff").textContent = `2045年まであと${diff}年です。`
+// document.querySelector(".diff").textContent = `2045年まであと${diff}年です。`
+
+
+// ///////////////////
+// //　HTMLタグの属性
+
+// 準備　aタグをすべて取得する。
+console.log(document.querySelectorAll("ul li a"))
+
+// JSで属性を設定・取得・確認する。
+// 設定 => setAttribute("属性名", "値")
+// 取得 => getAttribute("属性名") 状態を持っている値で返す。
+// 確認 => hasAttribute("属性名") 状態を真偽値で返す。
+
+arr = document.querySelectorAll("ul li a")
+arr.forEach(element => {
+  element.setAttribute("target", "_brank")
+  // 『target』属ががあるものを取得する。
+  console.log(element.getAttribute("target"))
+  // クラスを持っているものを取得する。この場合は、クラスの『値』を返す。
+  console.log(element.getAttribute("class"))
+  // クラスを持っているものを取得する。クラスがあるかどうか『真偽値』を返す。
+  console.log(element.hasAttribute("class"))
+});
