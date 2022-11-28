@@ -914,13 +914,21 @@ console.log(document.querySelectorAll("ul li a"))
 // 取得 => getAttribute("属性名") 状態を持っている値で返す。
 // 確認 => hasAttribute("属性名") 状態を真偽値で返す。
 
+// arr = document.querySelectorAll("ul li a")
+// arr.forEach(element => {
+//   element.setAttribute("target", "_brank")
+//   // 『target』属ががあるものを取得する。
+//   console.log(element.getAttribute("target"))
+//   // クラスを持っているものを取得する。この場合は、クラスの『値』を返す。
+//   console.log(element.getAttribute("class"))
+//   // クラスを持っているものを取得する。クラスがあるかどうか『真偽値』を返す。
+//   console.log(element.hasAttribute("class"))
+// });
+
+// if文を用いて、属性の付与を振り分ける。
 arr = document.querySelectorAll("ul li a")
 arr.forEach(element => {
-  element.setAttribute("target", "_brank")
-  // 『target』属ががあるものを取得する。
-  console.log(element.getAttribute("target"))
-  // クラスを持っているものを取得する。この場合は、クラスの『値』を返す。
-  console.log(element.getAttribute("class"))
-  // クラスを持っているものを取得する。クラスがあるかどうか『真偽値』を返す。
-  console.log(element.hasAttribute("class"))
+  if (element.getAttribute("href") !== "/") {
+    element.setAttribute("target", "_brank")
+  }
 });
