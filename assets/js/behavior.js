@@ -1002,15 +1002,17 @@
 // ///////////////////
 // 定期的に処理を実行する。 => setInterval(), clearInterval()
 
-// 一定時間経過で処理を実行する。
-setInterval(function() {
-  console.log("test")
-}, 1000)
-
-// let elapsTime = 0
-// ins = document.getElementById("time")
-// ins.textContent = elapsTime
+// // 一定時間経過で処理を実行する。
 // setInterval(function() {
-//   ins.textContent = elapsTime++ 
+//   console.log("test")
 // }, 1000)
+
+// 1秒ごとにHTMLでカウントアップしてゆく。
+let elapsTime = 0
+
+ins = document.getElementById("time")
+ins.textContent = elapsTime
+setInterval(function() {
+  ins.textContent = elapsTime++ 
+}, 1000)
 
