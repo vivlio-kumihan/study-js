@@ -991,10 +991,26 @@
 // console.log("test")
 
 
-// 約n秒後に振る舞いをさせる。ボタンをクリックしたらn秒後に実行 => addEventListener()
-document.getElementById("test").addEventListener("click", function(){
-  setTimeout(function(){
-    document.getElementById("contents").style.display = "block"
-  }, 2000)
-})
+// // 約n秒後に振る舞いをさせる。ボタンをクリックしたらn秒後に実行 => addEventListener()
+// document.getElementById("test").addEventListener("click", function(){
+//   setTimeout(function(){
+//     document.getElementById("contents").style.display = "block"
+//   }, 2000)
+// })
+
+
+// ///////////////////
+// 定期的に処理を実行する。 => setInterval(), clearInterval()
+
+// 一定時間経過で処理を実行する。
+setInterval(function() {
+  console.log("test")
+}, 1000)
+
+// let elapsTime = 0
+// ins = document.getElementById("time")
+// ins.textContent = elapsTime
+// setInterval(function() {
+//   ins.textContent = elapsTime++ 
+// }, 1000)
 
