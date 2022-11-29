@@ -968,16 +968,25 @@
 //   console.log("test2")
 // }, 3000)
 
-// 約n秒後に振る舞いをさせる。入れ子で使って順番に表示させる。
-// setTimeout()に関数を入れて使う。
-// 1s = 1000mm秒
-// 3s = 3000mm秒
-setTimeout(function() {
-  console.log("test2")
-  setTimeout(function() {
-    console.log("test3")
-  }, 3000)
-}, 3000)
+// // 約n秒後に振る舞いをさせる。入れ子で使って順番に表示させる。
+// // setTimeout()に関数を入れて使う。
+// setTimeout(function() {
+//   console.log("test2")
+//   setTimeout(function() {
+//     console.log("test3")
+//   }, 3000)
+// }, 3000)
+
+// console.log("test")
+
+// 約n秒後に振る舞いをさせる。関数て定義してリファクタリングする。
+function test() {
+  console.log("test")
+}
+
+setTimeout(test, 3000)
+setTimeout(test, 6000)
+setTimeout(test, 9000)
 
 console.log("test")
 
