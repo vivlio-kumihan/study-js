@@ -6,7 +6,7 @@ html {
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   /* letter-spacing: -0.2rem; */
   color: #555;
 }
@@ -42,6 +42,12 @@ li:not(:first-of-type) {
   border-radius: .3rem;
 }
 
+.test {
+  font-weight: 900;
+  color: #fff;
+  background-color: red ;
+  transition: .7s;
+}
 
 
 

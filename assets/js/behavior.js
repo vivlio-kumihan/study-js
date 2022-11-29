@@ -943,9 +943,19 @@ console.log(document.querySelectorAll("ul li a"))
 //   console.log("hello")
 // })
 
-// 画面上端からの"scroll"位置(px)を取得する。数値をし下に表示させる。position: fixed;
+// // 画面上端からの"scroll"位置(px)を取得する。数値をし下に表示させる。position: fixed;
+// window.addEventListener("scroll", function() {
+//   let scroll = document.documentElement.scrollTop
+//   console.log(scroll)
+//   document.getElementById("scroll-position").textContent = scroll
+// })
+
+// どこまでスクロールしたかでCSSを切替える。
 window.addEventListener("scroll", function() {
   let scroll = document.documentElement.scrollTop
-  console.log(scroll)
-  document.getElementById("scroll-position").textContent = scroll
+  if (scroll > 300) {
+    document.querySelector("ul").classList.add("test")
+  } else {
+    document.querySelector("ul").classList.remove("test")
+  }
 })
