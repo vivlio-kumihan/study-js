@@ -907,7 +907,7 @@
 // //　HTMLタグの属性
 
 // 準備　aタグをすべて取得する。
-console.log(document.querySelectorAll("ul li a"))
+// console.log(document.querySelectorAll("ul li a"))
 
 // JSで属性を設定・取得・確認する。
 // 設定 => setAttribute("属性名", "値")
@@ -950,12 +950,21 @@ console.log(document.querySelectorAll("ul li a"))
 //   document.getElementById("scroll-position").textContent = scroll
 // })
 
-// どこまでスクロールしたかでCSSを切替える。
-window.addEventListener("scroll", function() {
-  let scroll = document.documentElement.scrollTop
-  if (scroll > 300) {
-    document.querySelector("ul").classList.add("test")
-  } else {
-    document.querySelector("ul").classList.remove("test")
-  }
-})
+// // どこまでスクロールしたかでCSSを切替える。
+// window.addEventListener("scroll", function() {
+//   let scroll = document.documentElement.scrollTop
+//   if (scroll > 300) {
+//     document.querySelector("ul").classList.add("test")
+//   } else {
+//     document.querySelector("ul").classList.remove("test")
+//   }
+// })
+
+// 約n秒後に振る舞いをさせる。 => setTimeout()
+// setTimeout()に関数を入れて使う。
+// 1s = 1000mm秒
+// 3s = 3000mm秒
+setTimeout(function() {
+  console.log("test2")
+}, 3000)
+
