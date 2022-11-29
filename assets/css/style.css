@@ -22,7 +22,19 @@ body {
   font-size: 1rem;
 }
 
+button {
+  margin: 5rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #555;
+  border-radius: .5rem;
+}
 
+#contents {
+  font-size: 2rem;
+  font-weight: 900;
+  display: none;
+}
 
 /* 
 ul {

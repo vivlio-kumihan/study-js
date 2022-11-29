@@ -979,14 +979,22 @@
 
 // console.log("test")
 
-// 約n秒後に振る舞いをさせる。関数て定義してリファクタリングする。
-function test() {
-  console.log("test")
-}
+// // 約n秒後に振る舞いをさせる。関数て定義してリファクタリングする。=> setTimeout関数名)（（）不要）
+// function test() {
+  //   console.log("test")
+  // }
 
-setTimeout(test, 3000)
-setTimeout(test, 6000)
-setTimeout(test, 9000)
+// setTimeout(test, 3000)
+// setTimeout(test, 6000)
+// setTimeout(test, 9000)
 
-console.log("test")
+// console.log("test")
+
+
+// 約n秒後に振る舞いをさせる。ボタンをクリックしたらn秒後に実行 => addEventListener()
+document.getElementById("test").addEventListener("click", function(){
+  setTimeout(function(){
+    document.getElementById("contents").style.display = "block"
+  }, 2000)
+})
 
