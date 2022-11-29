@@ -960,11 +960,24 @@
 //   }
 // })
 
-// 約n秒後に振る舞いをさせる。 => setTimeout()
+// // 約n秒後に振る舞いをさせる。 => setTimeout()
+// // setTimeout()に関数を入れて使う。
+// // 1s = 1000mm秒
+// // 3s = 3000mm秒
+// setTimeout(function() {
+//   console.log("test2")
+// }, 3000)
+
+// 約n秒後に振る舞いをさせる。入れ子で使って順番に表示させる。
 // setTimeout()に関数を入れて使う。
 // 1s = 1000mm秒
 // 3s = 3000mm秒
 setTimeout(function() {
   console.log("test2")
+  setTimeout(function() {
+    console.log("test3")
+  }, 3000)
 }, 3000)
+
+console.log("test")
 
