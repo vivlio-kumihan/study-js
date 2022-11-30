@@ -1048,17 +1048,30 @@
 //   }
 // }, 1000)
 
-// カウントダウンしてみる。 
-let elapsTime = 5
-function writeTime(t) {
-  document.getElementById("time").textContent = `あと残り${t}秒です。`
-}
+// // カウントダウンしてみる。 
+// let elapsTime = 5
+// function writeTime(t) {
+//   document.getElementById("time").textContent = `あと残り${t}秒です。`
+// }
 
-const timerID = setInterval(function() {
-  elapsTime--
-  writeTime(elapsTime)
-  if (elapsTime === 0) {
-    alert("Time Up!")
-    clearInterval(timerID)
-  }
-}, 1000)
+// const timerID = setInterval(function() {
+//   elapsTime--
+//   writeTime(elapsTime)
+//   if (elapsTime === 0) {
+//     alert("Time Up!")
+//     clearInterval(timerID)
+//   }
+// }, 1000)
+
+// ///////////////////
+// // 三項演算子
+const num = 1
+
+// if (num >= 5) {
+//   console.log(`数字は${num}以上です。`)
+// } else {
+//   console.log(`数字は${num}未満です。`)
+// }
+
+let numResult = num >= 5 ? `数字は${num}以上です。` : `数字は${num}未満です。`
+document.getElementById("number").textContent = numResult
