@@ -1076,8 +1076,23 @@
 // let numResult = num >= 5 ? `数字は${num}以上です。` : `数字は${num}未満です。`
 // document.getElementById("number").textContent = numResult
 
-// 複数の条件を1行で書ける。変数への代入を切り分けたりする場合に便利かもしれない。
-const num = 1
+// // 複数の条件を1行で書ける。変数への代入を切り分けたりする場合に便利かもしれない。
+// const num = 1
 
-let numResult = num >= 5 ? "数字は5以上です。" : num >= 3 ? "数字は3以上です。" : `数字は${num}です。`
-document.getElementById("number").textContent = numResult
+// let numResult = num >= 5 ? "数字は5以上です。" : num >= 3 ? "数字は3以上です。" : `数字は${num}です。`
+// document.getElementById("number").textContent = numResult
+
+
+
+// ///////////////////
+// // アロー演算子
+
+// 関数の定義法　その1
+function taxCal(price) {
+  return Math.floor(price * 1.1)
+}
+
+list_price = 100
+
+// console.log(taxCal(num))
+document.getElementById("test").textContent = taxCal(list_price)
