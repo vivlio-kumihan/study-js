@@ -1034,16 +1034,31 @@
 //   }
 // }, 1000)
 
-// リファクタリングする。 
-let elapsTime = 0
+// // リファクタリングする。 
+// let elapsTime = 0
+// function writeTime(t) {
+//   document.getElementById("time").textContent = `${t}秒経過`
+// }
+
+// const timerID = setInterval(function() {
+//   elapsTime++
+//   writeTime(elapsTime)
+//   if (elapsTime === 5) {
+//     clearInterval(timerID)
+//   }
+// }, 1000)
+
+// カウントダウンしてみる。 
+let elapsTime = 5
 function writeTime(t) {
-  document.getElementById("time").textContent = `${t}秒経過`
+  document.getElementById("time").textContent = `あと残り${t}秒です。`
 }
 
 const timerID = setInterval(function() {
-  elapsTime++
+  elapsTime--
   writeTime(elapsTime)
-  if (elapsTime === 5) {
+  if (elapsTime === 0) {
+    alert("Time Up!")
     clearInterval(timerID)
   }
 }, 1000)
