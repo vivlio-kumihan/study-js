@@ -1007,12 +1007,30 @@
 //   console.log("test")
 // }, 1000)
 
-// 1秒ごとにHTMLでカウントアップしてゆく。
+// // 1秒ごとにHTMLでカウントアップしてゆく。
+// let elapsTime = 0
+
+// ins = document.getElementById("time")
+// ins.textContent = elapsTime
+// setInterval(function() {
+//   ins.textContent = elapsTime++ 
+// }, 1000)
+
+// 処理を止める。=> 
 let elapsTime = 0
 
 ins = document.getElementById("time")
-ins.textContent = elapsTime
-setInterval(function() {
-  ins.textContent = elapsTime++ 
+
+// setInterval()で生成したインスタンスを
+// clearInterval()の引数にすることで処理を止めることができる。
+
+// なお、『ins.textContent = elapsTime++』とすると意図した表現と変わってしまうので注意。
+
+const timerID = setInterval(function() {
+  elapsTime++
+  ins.textContent = elapsTime
+  if (elapsTime === 5) {
+    clearInterval(timerID)
+  }
 }, 1000)
 
