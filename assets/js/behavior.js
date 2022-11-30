@@ -1016,21 +1016,34 @@
 //   ins.textContent = elapsTime++ 
 // }, 1000)
 
-// 処理を止める。=> 
+// // 処理を止める。=> clearInterval()
+// let elapsTime = 0
+
+// ins = document.getElementById("time")
+
+// // setInterval()で生成したインスタンスを
+// // clearInterval()の引数にすることで処理を止めることができる。
+
+// // なお、『ins.textContent = elapsTime++』とすると意図した表現と変わってしまうので注意。
+
+// const timerID = setInterval(function() {
+//   elapsTime++
+//   ins.textContent = elapsTime
+//   if (elapsTime === 5) {
+//     clearInterval(timerID)
+//   }
+// }, 1000)
+
+// リファクタリングする。 
 let elapsTime = 0
-
-ins = document.getElementById("time")
-
-// setInterval()で生成したインスタンスを
-// clearInterval()の引数にすることで処理を止めることができる。
-
-// なお、『ins.textContent = elapsTime++』とすると意図した表現と変わってしまうので注意。
+function writeTime(t) {
+  document.getElementById("time").textContent = `${t}秒経過`
+}
 
 const timerID = setInterval(function() {
   elapsTime++
-  ins.textContent = elapsTime
+  writeTime(elapsTime)
   if (elapsTime === 5) {
     clearInterval(timerID)
   }
 }, 1000)
-
