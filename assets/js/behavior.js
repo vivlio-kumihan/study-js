@@ -1065,13 +1065,19 @@
 
 // ///////////////////
 // // 三項演算子
+// const num = 1
+
+// // if (num >= 5) {
+// //   console.log(`数字は${num}以上です。`)
+// // } else {
+// //   console.log(`数字は${num}未満です。`)
+// // }
+
+// let numResult = num >= 5 ? `数字は${num}以上です。` : `数字は${num}未満です。`
+// document.getElementById("number").textContent = numResult
+
+// 複数の条件を1行で書ける。変数への代入を切り分けたりする場合に便利かもしれない。
 const num = 1
 
-// if (num >= 5) {
-//   console.log(`数字は${num}以上です。`)
-// } else {
-//   console.log(`数字は${num}未満です。`)
-// }
-
-let numResult = num >= 5 ? `数字は${num}以上です。` : `数字は${num}未満です。`
+let numResult = num >= 5 ? "数字は5以上です。" : num >= 3 ? "数字は3以上です。" : `数字は${num}です。`
 document.getElementById("number").textContent = numResult
