@@ -1124,7 +1124,26 @@
 // const taxCal = price => Math.floor(price * 1.1)
 // document.getElementById("test").textContent = taxCal(100)
 
-// その3
-// 引数を省略できる。
-const taxCal = () => Math.floor(100 * 1.1)
-document.getElementById("test").textContent = taxCal()
+// // その3
+// // 引数を省略できる。
+// const taxCal = () => Math.floor(100 * 1.1)
+// document.getElementById("test").textContent = taxCal()
+
+
+// ///////////////////
+// // forEach
+
+const animals = ["犬", "猫", "狐", "虎"]
+
+// for文を使う。
+// for (let i = 0; i < animals.length; i++) {
+//   console.log(animals[i])
+// }
+animals.forEach(element => {
+  // コンソールで出力する。
+  console.log(element)
+  // リストで出力する。
+  let li = document.createElement("li")
+  li.textContent = element
+  document.querySelector("#animal").appendChild(li)
+});
