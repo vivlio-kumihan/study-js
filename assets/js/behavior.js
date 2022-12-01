@@ -1115,11 +1115,16 @@
 // }
 // document.getElementById("test").textContent = taxCal(100)
 
-// その2
-// 1行で書けるくらい処理が単純であれば、
-// {}を省略できる。
-// returnを省略できる。
-// 引数が一つば場（　）を省略できる。
-// で、完成形。
-const taxCal = price => Math.floor(price * 1.1)
-document.getElementById("test").textContent = taxCal(100)
+// // その2
+// // 1行で書けるくらい処理が単純であれば、
+// // {}を省略できる。
+// // returnを省略できる。
+// // 引数が一つば場（　）を省略できる。
+// // で、完成形。
+// const taxCal = price => Math.floor(price * 1.1)
+// document.getElementById("test").textContent = taxCal(100)
+
+// その3
+// 引数を省略できる。
+const taxCal = () => Math.floor(100 * 1.1)
+document.getElementById("test").textContent = taxCal()
