@@ -1139,9 +1139,9 @@
 // // for (let i = 0; i < animals.length; i++) {
   // //   console.log(animals[i])
   // // }
-  
-  
-// // forEachを使う。
+
+
+// // とりあえずforEachでやってみる。=> createElement(), appendChild()
 // animals.forEach(element => {
 //   // コンソールで出力する。
 //   console.log(element)
@@ -1151,12 +1151,31 @@
 //   document.querySelector("#animal").appendChild(li)
 // });
 
-const animals = ["犬", "猫", "狐", "虎"],
-      animalList = document.getElementById("animal")
 
+// const animals = ["犬", "猫", "狐", "虎"],
+//       animalList = document.getElementById("animal")
+
+// animals.forEach(element => {
+//   // リストで出力する。
+//   let li = document.createElement("li")
+//   li.textContent = element
+//   animalList.appendChild(li)
+// })
+
+// 何気にforEachってアロー関数を使っている。
+const animals = ["犬", "猫", "狐", "虎"],
+  animalList = document.getElementById("animal")
+
+// 元々はfunction()
+// animals.forEach(function(element) {
+//   let li = document.createElement("li")
+//   li.textContent = element
+//   animalList.appendChild(li)
+// });
+
+// アロー関数の形にしている。
 animals.forEach(element => {
-  // リストで出力する。
   let li = document.createElement("li")
   li.textContent = element
   animalList.appendChild(li)
-})
+});
