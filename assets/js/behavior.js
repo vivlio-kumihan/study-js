@@ -1133,17 +1133,30 @@
 // ///////////////////
 // // forEach
 
-const animals = ["犬", "猫", "狐", "虎"]
+// const animals = ["犬", "猫", "狐", "虎"]
 
-// for文を使う。
-// for (let i = 0; i < animals.length; i++) {
-//   console.log(animals[i])
-// }
+// // for文を使う。
+// // for (let i = 0; i < animals.length; i++) {
+  // //   console.log(animals[i])
+  // // }
+  
+  
+// // forEachを使う。
+// animals.forEach(element => {
+//   // コンソールで出力する。
+//   console.log(element)
+//   // リストで出力する。
+//   let li = document.createElement("li")
+//   li.textContent = element
+//   document.querySelector("#animal").appendChild(li)
+// });
+
+const animals = ["犬", "猫", "狐", "虎"],
+      animalList = document.getElementById("animal")
+
 animals.forEach(element => {
-  // コンソールで出力する。
-  console.log(element)
   // リストで出力する。
   let li = document.createElement("li")
   li.textContent = element
-  document.querySelector("#animal").appendChild(li)
-});
+  animalList.appendChild(li)
+})
