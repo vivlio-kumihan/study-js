@@ -1086,13 +1086,40 @@
 
 // ///////////////////
 // // アロー演算子
+// // ・名前がない関数
+// // ・変数に格納する。
+// // ・オブジェクトのプロパティに格納する。
+// // ・関数の引数にする。
 
-// 関数の定義法　その1
-function taxCal(price) {
-  return Math.floor(price * 1.1)
-}
+// // 関数の定義法　その1
+// function taxCal(price) {
+//   return Math.floor(price * 1.1)
+// }
 
-list_price = 100
+// list_price = 100
 
-// console.log(taxCal(num))
-document.getElementById("test").textContent = taxCal(list_price)
+// // console.log(taxCal(num))
+// document.getElementById("test").textContent = taxCal(list_price)
+
+// // 関数の定義法　その2 変数に格納する。
+// // 関数に名前をつけずに定義する。
+// const taxCal = function (price) {
+//   return Math.floor(price * 1.1)
+// }
+// document.getElementById("test").textContent = taxCal(100)
+
+// // アロー関数として定義する。
+// // その1
+// const taxCal = (price) => {
+//   return Math.floor(price * 1.1)
+// }
+// document.getElementById("test").textContent = taxCal(100)
+
+// その2
+// 1行で書けるくらい処理が単純であれば、
+// {}を省略できる。
+// returnを省略できる。
+// 引数が一つば場（　）を省略できる。
+// で、完成形。
+const taxCal = price => Math.floor(price * 1.1)
+document.getElementById("test").textContent = taxCal(100)
