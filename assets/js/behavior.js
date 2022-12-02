@@ -1182,20 +1182,28 @@
 //   animalList.appendChild(li)
 // });
 
-// ---
-// forEachの引数は3つある。　element, index, array
-const animals = ["犬", "猫", "狐", "虎"],
-      animalList = document.getElementById("animal")
+// // ---
+// // forEachの引数は3つある。　element, index, array
+// const animals = ["犬", "猫", "狐", "虎"],
+//       animalList = document.getElementById("animal")
 
-animals.forEach((element, idx, arr) => {
-  let li = document.createElement("li")
-  li.textContent = element
-  
-  if (idx + 1 === arr.length) {
-    let lastLi = document.createElement("li")
-    lastLi.textContent = "最後だけ無くす！"
-    animalList.appendChild(lastLi)
-  } else {
-    animalList.appendChild(li)
-  }
-})
+// animals.forEach((element, idx, arr) => {
+//   let li = document.createElement("li")
+//   li.textContent = element
+
+//   if (idx + 1 === arr.length) {
+//     let lastLi = document.createElement("li")
+//     lastLi.textContent = "最後だけ無くす！"
+//     animalList.appendChild(lastLi)
+//   } else {
+//     animalList.appendChild(li)
+//   }
+// })
+
+
+// ///////////////////
+// // テンプレート・リテラル
+
+const price = 1000,
+      text = "商品の価格"
+document.getElementById("output").textContent = `${text}は、${price}です。`
