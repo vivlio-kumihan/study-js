@@ -1134,7 +1134,7 @@
 // // forEach
 
 // const animals = ["犬", "猫", "狐", "虎"]
-
+// // ---
 // // for文を使う。
 // // for (let i = 0; i < animals.length; i++) {
   // //   console.log(animals[i])
@@ -1151,7 +1151,8 @@
 //   document.querySelector("#animal").appendChild(li)
 // });
 
-
+// // ---
+// // 生成するリスト要素をgetElementByIdを使いインスタンス化しておく
 // const animals = ["犬", "猫", "狐", "虎"],
 //       animalList = document.getElementById("animal")
 
@@ -1162,20 +1163,39 @@
 //   animalList.appendChild(li)
 // })
 
-// 何気にforEachってアロー関数を使っている。
-const animals = ["犬", "猫", "狐", "虎"],
-  animalList = document.getElementById("animal")
+// // ---
+// // 何気にforEachってアロー関数を使っていることに気づく。
+// const animals = ["犬", "猫", "狐", "虎"],
+//   animalList = document.getElementById("animal")
 
-// 元々はfunction()
+// // 元々はfunction()
 // animals.forEach(function(element) {
 //   let li = document.createElement("li")
 //   li.textContent = element
 //   animalList.appendChild(li)
 // });
 
-// アロー関数の形にしている。
-animals.forEach(element => {
+// // アロー関数の形にしている。
+// animals.forEach(element => {
+//   let li = document.createElement("li")
+//   li.textContent = element
+//   animalList.appendChild(li)
+// });
+
+// ---
+// forEachの引数は3つある。　element, index, array
+const animals = ["犬", "猫", "狐", "虎"],
+      animalList = document.getElementById("animal")
+
+animals.forEach((element, idx, arr) => {
   let li = document.createElement("li")
   li.textContent = element
-  animalList.appendChild(li)
-});
+  
+  if (idx + 1 === arr.length) {
+    let lastLi = document.createElement("li")
+    lastLi.textContent = "最後だけ無くす！"
+    animalList.appendChild(lastLi)
+  } else {
+    animalList.appendChild(li)
+  }
+})
