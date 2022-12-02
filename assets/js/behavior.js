@@ -1203,7 +1203,30 @@
 
 // ///////////////////
 // // テンプレート・リテラル
+// const price = 1000,
+//       text = "商品の価格"
+// document.getElementById("output").textContent = `${text}は、${price}です。`
 
-const price = 1000,
-      text = "商品の価格"
-document.getElementById("output").textContent = `${text}は、${price}です。`
+
+// ///////////////////
+// for of
+
+// // forEach　利点はインデックスを含めた複数の引数を扱える。
+// const family = ["信之", "和恵", "茉李"],
+//       familyUl = document.getElementById("list")
+      
+// family.forEach(name => {
+//   let liElem = document.createElement("li")
+//   liElem.textContent = name
+//   familyUl.appendChild(liElem)
+// })
+
+// for of 配列の要素だけを処理する場合にいいのかも。でもforEachで十分かな？
+const family = ["信之", "和恵", "茉李"],
+      familyUl = document.getElementById("list")
+
+for (const name of family) {
+  let liElem = document.createElement("li")
+  liElem.textContent = name
+  familyUl.appendChild(liElem) 
+}

@@ -23,10 +23,22 @@ body {
   margin: 0 auto;
 }
 
-#output {
+ul {
+  padding: 2rem;
+  background-color: #eee;
+}
+li::before {
+  content: "=>";
+}
+li:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+
+/* #output {
   text-align: center;
   padding: 2rem;
-}
+} */
 
 
 /* 
@@ -52,16 +64,8 @@ body {
   display: none;
 } */
 
-/* 
-ul {
-  padding: 2rem;
-  background-color: #eee;
-}
 
-li:not(:first-of-type) {
-  margin-top: 1rem;
-}
-
+/*
 #scroll-position {
   position: fixed;
   bottom: 3rem;
