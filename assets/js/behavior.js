@@ -1214,19 +1214,36 @@
 // // forEach　利点はインデックスを含めた複数の引数を扱える。
 // const family = ["信之", "和恵", "茉李"],
 //       familyUl = document.getElementById("list")
-      
+
 // family.forEach(name => {
-//   let liElem = document.createElement("li")
-//   liElem.textContent = name
-//   familyUl.appendChild(liElem)
+  //   let liElem = document.createElement("li")
+  //   liElem.textContent = name
+  //   familyUl.appendChild(liElem)
 // })
 
-// for of 配列の要素だけを処理する場合にいいのかも。でもforEachで十分かな？
-const family = ["信之", "和恵", "茉李"],
-      familyUl = document.getElementById("list")
+// // for of 配列の要素だけを処理する場合にいいのかも。でもforEachで十分かな？
+// const family = ["信之", "和恵", "茉李"],
+//       familyUl = document.getElementById("list")
 
-for (const name of family) {
+// for (const name of family) {
+  //   let liElem = document.createElement("li")
+  //   liElem.textContent = name
+  //   familyUl.appendChild(liElem)
+  // }
+
+
+// ///////////////////
+// reduce, reduceRight 合計を得る。
+// const sum = arr.reduce((previous, current, index) => previous + current)
+const arr = [10, 20, 30, 40, 50],
+      list = document.getElementById("value")
+const sum = arr.reduce((pre, cur, idx) => {
   let liElem = document.createElement("li")
-  liElem.textContent = name
-  familyUl.appendChild(liElem) 
-}
+  if (idx < arr.length - 1) {
+    liElem.textContent = `${idx}回目の小計は${pre + cur}`
+  } else {
+    liElem.textContent = `合計は${pre + cur}`
+  }
+  list.appendChild(liElem)
+  return pre + cur
+})
