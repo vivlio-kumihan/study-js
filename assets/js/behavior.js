@@ -1233,17 +1233,65 @@
 
 
 // ///////////////////
-// reduce, reduceRight 合計を得る。
-// const sum = arr.reduce((previous, current, index) => previous + current)
-const arr = [10, 20, 30, 40, 50],
-      list = document.getElementById("value")
-const sum = arr.reduce((pre, cur, idx) => {
-  let liElem = document.createElement("li")
-  if (idx < arr.length - 1) {
-    liElem.textContent = `${idx}回目の小計は${pre + cur}`
-  } else {
-    liElem.textContent = `合計は${pre + cur}`
+// // reduce, reduceRight 合計を得る。
+// // const sum = arr.reduce((previous, current, index) => previous + current)
+// const arr = [10, 20, 30, 40, 50],
+//       list = document.getElementById("value")
+// const sum = arr.reduce((pre, cur, idx) => {
+  //   let liElem = document.createElement("li")
+  //   if (idx < arr.length - 1) {
+    //     liElem.textContent = `${idx}回目の小計は${pre + cur}`
+    //   } else {
+      //     liElem.textContent = `合計は${pre + cur}`
+      //   }
+      //   list.appendChild(liElem)
+      //   return pre + cur
+      // })
+      
+      
+// ///////////////////
+// // filter関数　
+
+const members = [
+  {
+    position: "社長",
+    name: "佐藤",
+    age: 45,
+  },
+  {
+    position: "部長",
+    name: "鈴木",
+    age: 38,
+  },
+  {
+    position: "課長",
+    name: "高橋",
+    age: 35,
+  },
+  {
+    position: "係長",
+    name: "田中",
+    age: 30,
+  },
+  {
+    position: "社員",
+    name: "渡辺",
+    age: 23,
+  },
+  {
+    position: "社員",
+    name: "伊東",
+    age: 22,
   }
-  list.appendChild(liElem)
-  return pre + cur
-})
+]
+
+// 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+const memberList = document.getElementById("memberList"),
+      afterProcessingList = document.getElementById("afterProcessingList")
+
+members.forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+  memberList.appendChild(li)
+});
+
