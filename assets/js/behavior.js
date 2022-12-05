@@ -1295,3 +1295,23 @@ members.forEach(member => {
   memberList.appendChild(li)
 });
 
+// // filterの使い方
+// // ・filter関数で生成した配列を変数に収める。
+// // ・オブジェクトにfilter関数を充てる。
+// // ・filter関数へは、アロー関数で処理を作る。
+// // const filteredData = members.filter(member => {
+// //   // 複数行を書く場合はreturn必須。
+// //   return member.age >= 30
+// // })
+// // もちろん可能であれば1行で処理を書く。
+// // 条件　年齢が30歳以上であれば抽出する。
+// const filteredData = members.filter(member => member.age >= 30)
+
+// 名前に「藤」を含んでれれば抽出する。
+const filteredData = members.filter(member => member.name.includes("藤"))
+
+filteredData.forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+  afterProcessingList.appendChild(li)
+})
