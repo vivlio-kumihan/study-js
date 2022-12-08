@@ -1344,36 +1344,30 @@ members.forEach(member => {
 // const someData = members.some(member => member.position.includes("社長"))
 // console.log(someData)
 
-// 特定の条件に合致しば場合、コメントを返す。
-// ただ、これじゃない。
-const memberAge = 30,
-      filteredData = members.filter(member => member.age >= memberAge)
+// // 特定の条件に合致しば場合、コメントを返す。
+// // ただ、これじゃない。
+// const memberAge = 30,
+//       filteredData = members.filter(member => member.age >= memberAge)
 
-if (members.some(member => member.age >= memberAge)) {
-  afterProcessingList.textContent = `${memberAge}歳以上の社員が${filteredData.length}名います。`
+// if (members.some(member => member.age >= memberAge)) {
+//   afterProcessingList.textContent = `${memberAge}歳以上の社員が${filteredData.length}名います。`
+// }
+
+// every() 全ての条件に当てはまっていればtrueを返す
+const memberAge = 24,
+      filteredData = members.filter(member => member.age <= memberAge)
+
+if (members.every(member => member.age >= memberAge)) {
+  afterProcessingList.textContent = `社員全員が${memberAge}歳以上で構成されている会社です。`
+} else {
+  afterProcessingList.textContent = `${memberAge}歳以下の社員が${filteredData.length}名います。`
 }
 
-// const someData = members.some((member, idx) => {
-//   if (member.name.includes("中")) {
-//     return members[idx].name
-//     // return console.log(members[idx].name)
-//   }
-// })
-// console.log(someData)
+
+
 
 // arr = [1,2,3,4,5]
 // arr.reverse().forEach(element => {
 //   console.log(element)
 // })
-
-// every 全ての条件に当てはまっていればtrueを返す
-
-
-// // 名前に「藤」を含んでれれば抽出する。
-// const filteredData = members.filter(member => member.name.includes("藤"))
-
-// filteredData.forEach(member => {
-//   const li = document.createElement("li")
-//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-//   afterProcessingList.appendChild(li)
-// })
+  
