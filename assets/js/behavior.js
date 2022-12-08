@@ -1285,6 +1285,38 @@ const members = [
   }
 ]
 
+// // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+// const memberList = document.getElementById("memberList"),
+//       afterProcessingList = document.getElementById("afterProcessingList")
+
+// members.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   memberList.appendChild(li)
+// });
+
+// // filterの使い方
+// // ・filter関数で生成した配列を変数に収める。
+// // ・オブジェクトにfilter関数を充てる。
+// // ・filter関数へは、アロー関数で処理を作る。
+// const filteredData = members.filter(member => {
+//   // 複数行を書く場合はreturn必須。
+//   return member.age >= 30
+// })
+// もちろん可能であれば1行で処理を書く。
+// 条件　年齢が30歳以上であれば抽出する。
+// const filteredData = members.filter(member => member.age >= 30)
+// console.log(filteredData.length)
+
+// // 名前に「藤」を含んでれれば抽出する。
+// const filteredData = members.filter(member => member.name.includes("藤"))
+
+// filteredData.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   afterProcessingList.appendChild(li)
+// })
+
 // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
 const memberList = document.getElementById("memberList"),
       afterProcessingList = document.getElementById("afterProcessingList")
@@ -1293,25 +1325,55 @@ members.forEach(member => {
   const li = document.createElement("li")
   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
   memberList.appendChild(li)
-});
-
-// // filterの使い方
-// // ・filter関数で生成した配列を変数に収める。
-// // ・オブジェクトにfilter関数を充てる。
-// // ・filter関数へは、アロー関数で処理を作る。
-// // const filteredData = members.filter(member => {
-// //   // 複数行を書く場合はreturn必須。
-// //   return member.age >= 30
-// // })
-// // もちろん可能であれば1行で処理を書く。
-// // 条件　年齢が30歳以上であれば抽出する。
-// const filteredData = members.filter(member => member.age >= 30)
-
-// 名前に「藤」を含んでれれば抽出する。
-const filteredData = members.filter(member => member.name.includes("藤"))
-
-filteredData.forEach(member => {
-  const li = document.createElement("li")
-  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-  afterProcessingList.appendChild(li)
 })
+
+// // some() 一つでも条件に当てはまっていればtrueを返す。
+// // 40歳以上の社員がいたらtrueを返す。
+// // 複数行
+// const someData = members.some(member => {
+//   return member.age >= 40
+// })
+// console.log(someData)
+
+// // 1行
+// console.log(someData)
+// const someData = members.some(member => member.age >= 40)
+// console.log(someData)
+
+// // 特定の役職があればtrueを返す => 
+// const someData = members.some(member => member.position.includes("社長"))
+// console.log(someData)
+
+// 特定の条件に合致しば場合、コメントを返す。
+// ただ、これじゃない。
+const memberAge = 30,
+      filteredData = members.filter(member => member.age >= memberAge)
+
+if (members.some(member => member.age >= memberAge)) {
+  afterProcessingList.textContent = `${memberAge}歳以上の社員が${filteredData.length}名います。`
+}
+
+// const someData = members.some((member, idx) => {
+//   if (member.name.includes("中")) {
+//     return members[idx].name
+//     // return console.log(members[idx].name)
+//   }
+// })
+// console.log(someData)
+
+// arr = [1,2,3,4,5]
+// arr.reverse().forEach(element => {
+//   console.log(element)
+// })
+
+// every 全ての条件に当てはまっていればtrueを返す
+
+
+// // 名前に「藤」を含んでれれば抽出する。
+// const filteredData = members.filter(member => member.name.includes("藤"))
+
+// filteredData.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   afterProcessingList.appendChild(li)
+// })
