@@ -1364,7 +1364,7 @@
 // }
 
 
-///////////////////
+// /////////////////
 // 配列をシャッフルする。pythonでは定義されている関数がJSにはない。=> arrSuffle()
 
 const members = [
@@ -1410,8 +1410,6 @@ members.forEach(member => {
   memberList.appendChild(li)
 })
 
-const numbers = [1, 2, 3, 4, 5]
-
 function arrSuffle(array) {
   // 配列をディープコピーする。
   const arr = array.slice()
@@ -1419,18 +1417,17 @@ function arrSuffle(array) {
   // console.log(arr.reverse())
 
   for (let idx = arr.length - 1; idx >= 0; idx--) {
-    const randomIdx = Math.floor(Math.random() * (idx + 1))
-    // ・配列を逆から読んでいく。
-    // ・インデックス番号から乱数を生成して、その数値を入れ替えるインデックス番号とする。
-    // ・順次番号を入れ替える。
-    // ・それを配列の数だけ繰り返す。
-    // ・最後はインデックば番号ど同士だから入れ替えな無いがそれはそれで仕方がない動き。
-    // console.log('idx', idx)
-    // console.log('randomIdx', randomIdx);
+    const randomIdx = Math.floor(Math.random() * (idx + 1));
     [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
     // console.log('arr', arr)
   }
   return arr
 }
 
-console.log(arrSuffle(numbers))
+// console.log(arrSuffle(members))
+
+arrSuffle(members).forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+  afterProcessingList.appendChild(li)
+})
