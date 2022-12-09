@@ -1252,38 +1252,38 @@
 // ///////////////////
 // // filter関数　
 
-const members = [
-  {
-    position: "社長",
-    name: "佐藤",
-    age: 45,
-  },
-  {
-    position: "部長",
-    name: "鈴木",
-    age: 38,
-  },
-  {
-    position: "課長",
-    name: "高橋",
-    age: 35,
-  },
-  {
-    position: "係長",
-    name: "田中",
-    age: 30,
-  },
-  {
-    position: "社員",
-    name: "渡辺",
-    age: 23,
-  },
-  {
-    position: "社員",
-    name: "伊東",
-    age: 22,
-  }
-]
+// const members = [
+//   {
+//     position: "社長",
+//     name: "佐藤",
+//     age: 45,
+//   },
+//   {
+//     position: "部長",
+//     name: "鈴木",
+//     age: 38,
+//   },
+//   {
+//     position: "課長",
+//     name: "高橋",
+//     age: 35,
+//   },
+//   {
+//     position: "係長",
+//     name: "田中",
+//     age: 30,
+//   },
+//   {
+//     position: "社員",
+//     name: "渡辺",
+//     age: 23,
+//   },
+//   {
+//     position: "社員",
+//     name: "伊東",
+//     age: 22,
+//   }
+// ]
 
 // // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
 // const memberList = document.getElementById("memberList"),
@@ -1317,15 +1317,15 @@ const members = [
 //   afterProcessingList.appendChild(li)
 // })
 
-// 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
-const memberList = document.getElementById("memberList"),
-      afterProcessingList = document.getElementById("afterProcessingList")
+// // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+// const memberList = document.getElementById("memberList"),
+//       afterProcessingList = document.getElementById("afterProcessingList")
 
-members.forEach(member => {
-  const li = document.createElement("li")
-  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-  memberList.appendChild(li)
-})
+// members.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   memberList.appendChild(li)
+// })
 
 // // some() 一つでも条件に当てはまっていればtrueを返す。
 // // 40歳以上の社員がいたらtrueを返す。
@@ -1353,21 +1353,84 @@ members.forEach(member => {
 //   afterProcessingList.textContent = `${memberAge}歳以上の社員が${filteredData.length}名います。`
 // }
 
-// every() 全ての条件に当てはまっていればtrueを返す
-const memberAge = 24,
-      filteredData = members.filter(member => member.age <= memberAge)
+// // every() 全ての条件に当てはまっていればtrueを返す。
+// const memberAge = 24,
+//       filteredData = members.filter(member => member.age <= memberAge)
 
-if (members.every(member => member.age >= memberAge)) {
-  afterProcessingList.textContent = `社員全員が${memberAge}歳以上で構成されている会社です。`
-} else {
-  afterProcessingList.textContent = `${memberAge}歳以下の社員が${filteredData.length}名います。`
+// if (members.every(member => member.age >= memberAge)) {
+//   afterProcessingList.textContent = `社員全員が${memberAge}歳以上で構成されている会社です。`
+// } else {
+//   afterProcessingList.textContent = `${memberAge}歳以下の社員が${filteredData.length}名います。`
+// }
+
+
+///////////////////
+// 配列をシャッフルする。pythonでは定義されている関数がJSにはない。=> arrSuffle()
+
+const members = [
+  {
+    position: "社長",
+    name: "佐藤",
+    age: 45,
+  },
+  {
+    position: "部長",
+    name: "鈴木",
+    age: 38,
+  },
+  {
+    position: "課長",
+    name: "高橋",
+    age: 35,
+  },
+  {
+    position: "係長",
+    name: "田中",
+    age: 30,
+  },
+  {
+    position: "社員",
+    name: "渡辺",
+    age: 23,
+  },
+  {
+    position: "社員",
+    name: "伊東",
+    age: 22,
+  }
+]
+
+// 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+const memberList = document.getElementById("memberList"),
+  afterProcessingList = document.getElementById("afterProcessingList")
+
+members.forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+  memberList.appendChild(li)
+})
+
+const numbers = [1, 2, 3, 4, 5]
+
+function arrSuffle(array) {
+  // 配列をディープコピーする。
+  const arr = array.slice()
+  // console.log(arr)
+  // console.log(arr.reverse())
+
+  for (let idx = arr.length - 1; idx >= 0; idx--) {
+    const randomIdx = Math.floor(Math.random() * (idx + 1))
+    // ・配列を逆から読んでいく。
+    // ・インデックス番号から乱数を生成して、その数値を入れ替えるインデックス番号とする。
+    // ・順次番号を入れ替える。
+    // ・それを配列の数だけ繰り返す。
+    // ・最後はインデックば番号ど同士だから入れ替えな無いがそれはそれで仕方がない動き。
+    // console.log('idx', idx)
+    // console.log('randomIdx', randomIdx);
+    [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
+    // console.log('arr', arr)
+  }
+  return arr
 }
 
-
-
-
-// arr = [1,2,3,4,5]
-// arr.reverse().forEach(element => {
-//   console.log(element)
-// })
-  
+console.log(arrSuffle(numbers))
