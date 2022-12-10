@@ -1479,23 +1479,32 @@ members.forEach(member => {
   memberList.appendChild(li)
 })
 
-// find
-// array.find(element, index, array)
+// // find
+// // array.find(element, index, array)
 
-// findは、条件が合致した最初の一つ目を見つける。数値で検索する場合。
-console.log(members.find(elememt => { return elememt.age < 30 })) 
+// // findは、条件が合致した最初の一つ目を見つける。数値で検索する場合。
+// console.log(members.find(elememt => return elememt.age < 30)) 
 
-// 文字列で検索する場合。
-// 合致する。
-console.log(members.find(elememt => { return elememt.position === "係長" })) 
-// 含む。
-console.log(members.find(elememt => { return elememt.name.includes("高") })) 
+// // 文字列で検索する場合。
+// // 合致する。
+// console.log(members.find(elememt => { return elememt.position === "係長" })) 
+// ///// 注意 /////1行にする場合は『return』いらない。
+// console.log(members.find(elememt => elememt.position === "係長")) 
+// // 含む。
+// console.log(members.find(elememt => elememt.name.includes("高"))) 
 
-// // 出力
-// const li = document.createElement("li")
-// li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-// afterProcessingList.appendChild(li)
+// HTMLへリストで出力してみる。最初が合致した一人編
+const li = document.createElement("li")
+const matchMember = members.find(elememt => elememt.position === "係長")
+li.textContent = `条件が合致する最初のメンバーは、${matchMember.position}: ${matchMember.name}, ${matchMember.age}歳`
+afterProcessingList.appendChild(li)
 
+
+// members.forEach(member => {
+//   if (judgment) {
+//     console.log(member.name)
+//   }
+// });
 // arrSuffle(members).forEach(member => {
 //   const li = document.createElement("li")
 //   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
