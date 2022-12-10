@@ -1493,39 +1493,17 @@ members.forEach(member => {
 // // 含む。
 // console.log(members.find(elememt => elememt.name.includes("高"))) 
 
-// HTMLへリストで出力してみる。最初が合致した一人編
-const li = document.createElement("li")
-const matchMember = members.find(elememt => elememt.position === "係長")
-li.textContent = `条件が合致する最初のメンバーは、${matchMember.position}: ${matchMember.name}, ${matchMember.age}歳`
-afterProcessingList.appendChild(li)
+// // HTMLへリストで出力してみる。最初が合致した一人編
+// const li = document.createElement("li")
+// const matchMember = members.find(elememt => elememt.position === "係長")
+// li.textContent = `条件が合致する最初のメンバーは、${matchMember.position}: ${matchMember.name}, ${matchMember.age}歳`
+// afterProcessingList.appendChild(li)
 
+// // HTMLへリストで出力してみる。最初が合致した複数編
+let matchMember = members.filter(member => member.age >= 30)
 
-// members.forEach(member => {
-//   if (judgment) {
-//     console.log(member.name)
-//   }
-// });
-// arrSuffle(members).forEach(member => {
-//   const li = document.createElement("li")
-//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-//   afterProcessingList.appendChild(li)
-// })
-
-
-
-// console.log(
-//   members.find(elememt => {
-//     return elememt.age >= 30
-//     // if (member.age >= 30) {
-//     //   console.log(`${member.name}さんは30歳以上です。`)
-//     // } else {
-//     //   console.log(`${member.name}さんは30歳未満です。`)
-//     // }
-//   })
-// ) 
-
-
-// console.log(finder(members))
-
-// findIndex
-
+matchMember.forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `合致したメンバー${member.name}さん`
+  afterProcessingList.appendChild(li)
+})
