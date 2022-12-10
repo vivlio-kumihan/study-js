@@ -1433,51 +1433,51 @@
 // })
 
 
-/////////////////
-// 配列から条件に合うデータやindex（位置）を取得する。=> find, findIndex
+// /////////////////
+// // 配列から条件に合うデータやindex（位置）を取得する。=> find, findIndex
 
-const members = [
-  {
-    position: "社長",
-    name: "佐藤",
-    age: 45,
-  },
-  {
-    position: "部長",
-    name: "鈴木",
-    age: 38,
-  },
-  {
-    position: "課長",
-    name: "高木",
-    age: 35,
-  },
-  {
-    position: "係長",
-    name: "田中",
-    age: 30,
-  },
-  {
-    position: "社員",
-    name: "渡辺",
-    age: 23,
-  },
-  {
-    position: "社員",
-    name: "高橋",
-    age: 22,
-  }
-]
+// const members = [
+//   {
+//     position: "社長",
+//     name: "佐藤",
+//     age: 45,
+//   },
+//   {
+//     position: "部長",
+//     name: "鈴木",
+//     age: 38,
+//   },
+//   {
+//     position: "課長",
+//     name: "高木",
+//     age: 35,
+//   },
+//   {
+//     position: "係長",
+//     name: "田中",
+//     age: 30,
+//   },
+//   {
+//     position: "社員",
+//     name: "渡辺",
+//     age: 23,
+//   },
+//   {
+//     position: "社員",
+//     name: "高橋",
+//     age: 22,
+//   }
+// ]
 
-// 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
-const memberList = document.getElementById("memberList"),
-  afterProcessingList = document.getElementById("afterProcessingList")
+// // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+// const memberList = document.getElementById("memberList"),
+//   afterProcessingList = document.getElementById("afterProcessingList")
 
-members.forEach(member => {
-  const li = document.createElement("li")
-  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-  memberList.appendChild(li)
-})
+// members.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   memberList.appendChild(li)
+// })
 
 // // find
 // // array.find(element, index, array)
@@ -1499,11 +1499,45 @@ members.forEach(member => {
 // li.textContent = `条件が合致する最初のメンバーは、${matchMember.position}: ${matchMember.name}, ${matchMember.age}歳`
 // afterProcessingList.appendChild(li)
 
-// // HTMLへリストで出力してみる。最初が合致した複数編
-let matchMember = members.filter(member => member.age >= 30)
+// // // HTMLへリストで出力してみる。最初が合致した複数編
+// let matchMember = members.filter(member => member.age >= 30)
 
-matchMember.forEach(member => {
-  const li = document.createElement("li")
-  li.textContent = `合致したメンバー${member.name}さん`
-  afterProcessingList.appendChild(li)
+// matchMember.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `合致したメンバー${member.name}さん`
+//   afterProcessingList.appendChild(li)
+// })
+
+
+// /////////////////
+// // 連想配列 => Object.kyes, Object.values, Object.entries
+
+const fruits = {
+  apple: 200,
+  orange: 100,
+  banana: 150,
+  pear : 300
+}
+
+console.log(fruits.pear)
+// => 300
+
+console.log(Object.keys(fruits))
+// => ['apple', 'orange', 'banana', 'pear']
+
+console.log(Object.keys(fruits).includes("apple"))
+// => true
+
+// キーを出力する。
+Object.keys(fruits).forEach(key => console.log(key))
+
+// 値を出力する。
+Object.keys(fruits).forEach(key => console.log(fruits[key]))
+
+// そんなことをしないでも値は出せる。
+console.log(Object.values(fruits))
+
+// 連想配列をいい感じで処理するには『entries()』が良さげだ。
+Object.entries(fruits).forEach(([key, value]) => {
+  console.log("key:", key, "value:", value)
 })

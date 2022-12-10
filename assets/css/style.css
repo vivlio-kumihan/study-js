@@ -23,7 +23,12 @@ body {
   text-align: left;
 }
 
-section {
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* section {
   width: 100%;
   text-align: left;
   background-color: #eee;
@@ -37,17 +42,12 @@ li::before {
 }
 li:not(:first-of-type) {
   margin-top: 1rem;
-}
+} */
 
-h1 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-h2 {
+/* h2 {
   padding: .5rem 1rem;
   font-weight: 700;
-}
+} */
 
 /* #output {
   text-align: center;
