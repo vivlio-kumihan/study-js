@@ -1247,8 +1247,8 @@
       //   list.appendChild(liElem)
       //   return pre + cur
       // })
-      
-      
+
+
 // ///////////////////
 // // filter関数　
 
@@ -1367,6 +1367,75 @@
 // /////////////////
 // 配列をシャッフルする。pythonでは定義されている関数がJSにはない。=> arrSuffle()
 
+// const members = [
+//   {
+//     position: "社長",
+//     name: "佐藤",
+//     age: 45,
+//   },
+//   {
+//     position: "部長",
+//     name: "鈴木",
+//     age: 38,
+//   },
+//   {
+//     position: "課長",
+//     name: "高橋",
+//     age: 35,
+//   },
+//   {
+//     position: "係長",
+//     name: "田中",
+//     age: 30,
+//   },
+//   {
+//     position: "社員",
+//     name: "渡辺",
+//     age: 23,
+//   },
+//   {
+//     position: "社員",
+//     name: "伊東",
+//     age: 22,
+//   }
+// ]
+
+// // 前準備　オブジェクトのデータをリスト形式で吐き出す方法。
+// const memberList = document.getElementById("memberList"),
+//   afterProcessingList = document.getElementById("afterProcessingList")
+
+// members.forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   memberList.appendChild(li)
+// })
+
+// function arrSuffle(array) {
+//   // 配列をディープコピーする。
+//   const arr = array.slice()
+//   // console.log(arr)
+//   // console.log(arr.reverse())
+
+//   for (let idx = arr.length - 1; idx >= 0; idx--) {
+//     const randomIdx = Math.floor(Math.random() * (idx + 1));
+//     [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
+//     // console.log('arr', arr)
+//   }
+//   return arr
+// }
+
+// // console.log(arrSuffle(members))
+
+// arrSuffle(members).forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   afterProcessingList.appendChild(li)
+// })
+
+
+/////////////////
+// 配列から条件に合うデータやindex（位置）を取得する。=> find, findIndex
+
 const members = [
   {
     position: "社長",
@@ -1380,7 +1449,7 @@ const members = [
   },
   {
     position: "課長",
-    name: "高橋",
+    name: "高木",
     age: 35,
   },
   {
@@ -1395,7 +1464,7 @@ const members = [
   },
   {
     position: "社員",
-    name: "伊東",
+    name: "高橋",
     age: 22,
   }
 ]
@@ -1410,24 +1479,44 @@ members.forEach(member => {
   memberList.appendChild(li)
 })
 
-function arrSuffle(array) {
-  // 配列をディープコピーする。
-  const arr = array.slice()
-  // console.log(arr)
-  // console.log(arr.reverse())
+// find
+// array.find(element, index, array)
 
-  for (let idx = arr.length - 1; idx >= 0; idx--) {
-    const randomIdx = Math.floor(Math.random() * (idx + 1));
-    [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
-    // console.log('arr', arr)
-  }
-  return arr
-}
+// findは、条件が合致した最初の一つ目を見つける。数値で検索する場合。
+console.log(members.find(elememt => { return elememt.age < 30 })) 
 
-// console.log(arrSuffle(members))
+// 文字列で検索する場合。
+// 合致する。
+console.log(members.find(elememt => { return elememt.position === "係長" })) 
+// 含む。
+console.log(members.find(elememt => { return elememt.name.includes("高") })) 
 
-arrSuffle(members).forEach(member => {
-  const li = document.createElement("li")
-  li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
-  afterProcessingList.appendChild(li)
-})
+// // 出力
+// const li = document.createElement("li")
+// li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+// afterProcessingList.appendChild(li)
+
+// arrSuffle(members).forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `${member.position}: ${member.name}, ${member.age}歳`
+//   afterProcessingList.appendChild(li)
+// })
+
+
+
+// console.log(
+//   members.find(elememt => {
+//     return elememt.age >= 30
+//     // if (member.age >= 30) {
+//     //   console.log(`${member.name}さんは30歳以上です。`)
+//     // } else {
+//     //   console.log(`${member.name}さんは30歳未満です。`)
+//     // }
+//   })
+// ) 
+
+
+// console.log(finder(members))
+
+// findIndex
+
