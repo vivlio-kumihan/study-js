@@ -1512,6 +1512,40 @@
 // /////////////////
 // // 連想配列 => Object.kyes, Object.values, Object.entries
 
+// const fruits = {
+  //   apple: 200,
+  //   orange: 100,
+  //   banana: 150,
+  //   pear : 300
+  // }
+
+  // console.log(fruits.pear)
+  // // => 300
+
+  // console.log(Object.keys(fruits))
+  // // => ['apple', 'orange', 'banana', 'pear']
+
+  // console.log(Object.keys(fruits).includes("apple"))
+  // // => true
+
+  // // キーを出力する。
+  // Object.keys(fruits).forEach(key => console.log(key))
+
+  // // 値を出力する。
+  // Object.keys(fruits).forEach(key => console.log(fruits[key]))
+
+  // // そんなことをしないでも値は出せる。
+  // console.log(Object.values(fruits))
+
+  // // 連想配列をいい感じで処理するには『entries()』が良さげだ。
+  // Object.entries(fruits).forEach(([key, value]) => {
+    //   console.log("key:", key, "value:", value)
+    // })
+
+
+// /////////////////
+// // 連想配列を操作する。 => for in
+
 const fruits = {
   apple: 200,
   orange: 100,
@@ -1519,25 +1553,27 @@ const fruits = {
   pear : 300
 }
 
-console.log(fruits.pear)
-// => 300
+// for in でキーを取り出し値を得る。
+for (const key in fruits) {
+  console.log(fruits[key])
+}
 
-console.log(Object.keys(fruits))
-// => ['apple', 'orange', 'banana', 'pear']
+// 合計する。
+let total = 0
+for (const key in fruits) {
+  total += fruits[key]
+}
+console.log(total)
 
-console.log(Object.keys(fruits).includes("apple"))
-// => true
-
-// キーを出力する。
-Object.keys(fruits).forEach(key => console.log(key))
-
-// 値を出力する。
-Object.keys(fruits).forEach(key => console.log(fruits[key]))
-
-// そんなことをしないでも値は出せる。
-console.log(Object.values(fruits))
-
-// 連想配列をいい感じで処理するには『entries()』が良さげだ。
-Object.entries(fruits).forEach(([key, value]) => {
-  console.log("key:", key, "value:", value)
+// キーだけの配列を生成させて forEachで回す。
+Object.keys(fruits).forEach(key => {
+  console.log(`${key}: ${fruits[key]}`)
 })
+
+// 連想配列に値が存在していたら ture を返す。
+for (const key in fruits) {
+  if (Object.hasOwnProperty.call(fruits, key)) {
+    const element = fruits[key];
+    console.log(element)
+  }
+}
