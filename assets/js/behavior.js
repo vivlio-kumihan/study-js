@@ -1580,19 +1580,19 @@
 // /////////////////
 // for, forEach 文の中で使う、continue と break
 
-const li = document.querySelectorAll("li")
+// const li = document.querySelectorAll("li")
 
-// continue, return
-// forEachは、『continue』ではなく『return』
-// 『forEach内』で『return』すると、その時点で次のループへスキップされる。
-// つまり、例えば下のコードのように、
-// 内容に『テキスト』という文字が含まるもの『以外』の処理を変える場合に使う。
-li.forEach((element, idx) => {
-    if (element.textContent.includes("色付けしない")) return
-    element.style.color = "#fff"
-    element.style.backgroundColor = "red"
-  })
-  
+// // continue, return
+// // forEachは、『continue』ではなく『return』
+// // 『forEach内』で『return』すると、その時点で次のループへスキップされる。
+// // つまり、例えば下のコードのように、
+// // 内容に『テキスト』という文字が含まるもの『以外』の処理を変える場合に使う。
+// li.forEach((element, idx) => {
+//     if (element.textContent.includes("色付けしない")) return
+//     element.style.color = "#fff"
+//     element.style.backgroundColor = "red"
+//   })
+
 // // インデックス番号が『偶数』だったら処理をスルー（return => 入口に返して最初から。）する。
 // // つまり、インデックスの奇数番号にスタイル付をする。
 // li.forEach((element, idx) => {
@@ -1601,9 +1601,123 @@ li.forEach((element, idx) => {
 //   element.style.backgroundColor = "#333"
 // })
 
-// break
-for (let idx = 0; idx < li.length; idx++) {
-  if (idx === 5) break
-    li[idx].style.color = "#fff"
-    li[idx].style.backgroundColor = "#333"
+// // break
+// for (let idx = 0; idx < li.length; idx++) {
+//   if (idx === 5) break
+//     li[idx].style.color = "#fff"
+//     li[idx].style.backgroundColor = "#333"
+// }
+
+
+/////////////////
+// 配列の順番を変える。=> sort
+
+let numArr = [3,5,2,1,4]
+console.log(numArr.sort())
+// => [1, 2, 3, 4, 5]
+
+let strArr1 = ["お", "い", "あ", "う", "え"]
+console.log(strArr1.sort())
+// => ['あ', 'い', 'う', 'え', 'お']
+
+let strArr2 = ["あいだ", "あいかわ", "あしだ", "あじろ", "あべ"]
+console.log(strArr2.sort())
+
+
+const members = [
+  {
+    position: "社長",
+    name: "和田",
+    ruby: "わだ",
+    age: 45,
+  },
+  {
+    position: "部長",
+    name: "明石",
+    ruby: "あかし",
+    age: 38,
+  },
+  {
+    position: "課長",
+    name: "高木",
+    ruby: "たかぎ",
+    age: 35,
+  },
+  {
+    position: "係長",
+    name: "田中",
+    ruby: "たなか",
+    age: 30,
+  },
+  {
+    position: "社員",
+    name: "木戸",
+    ruby: "きど",
+    age: 23,
+  },
+  {
+    position: "社員",
+    name: "村田",
+    ruby: "むらた",
+    age: 22,
+  }
+]
+
+// 現状の配列をHTMLのList表示させる。
+members.forEach(element => {
+  const li = document.createElement("li")
+  li.textContent = `${ element.name }さん：${ element.position }, ${ element.age }歳`
+  document.getElementById("memberList").appendChild(li)
+});
+
+// 配列をシャッフルさせるためど独自関数を定義する。
+function arrSuffle(array) {
+  // 配列をディープコピーする。
+  const arr = array.slice()
+
+  for (let idx = arr.length - 1; idx >= 0; idx--) {
+    const randomIdx = Math.floor(Math.random() * (idx + 1));
+    [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
+  }
+  return arr
 }
+
+// 一旦ここで配列をシャッフルする。
+arrSuffle(members).forEach(member => {
+  const li = document.createElement("li")
+  li.textContent = `suffled ${member.position}さん: ${member.name}, ${member.age}歳`
+  afterProcessingList.appendChild(li)
+})
+
+// sort 配列をsortさせる。結果は配列で返る。
+const resultArr = arrSuffle(members).sort((elemX, elemY) => {
+  //『数値』は、XとYを入れ替える。
+  // // 年齢（数値）を降順にソートする。=> Y - X
+  // return elemY.age - elemX.age
+
+  // // 年齢（数値）を昇順にソートする。=> X - Y
+  // return elemX.age - elemY.age
+  // return elemY.ruby > elemX.ruby
+
+  // // 『文字列』は不等号の向きを変える。
+  // // ふりがな（文字列）を降順にソートする。
+  // if (elemY.ruby > elemX.ruby) {
+  //   return 1
+  // } else {
+  //   return -1
+  // }
+
+  // ふりがな（文字列）昇順にソートする。
+  if (elemY.ruby < elemX.ruby) {
+    return 1
+  } else {
+    return -1
+  }
+})
+
+// 変更した配列データをリストへ反ささせる。
+resultArr.forEach(element => {
+  const li = document.createElement("li")
+  li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+  document.getElementById("afterProcessingList").appendChild(li)
+});
