@@ -28,6 +28,10 @@ h1 {
   font-size: 2rem;
 }
 
+li {
+  padding: 1rem;
+}
+
 /* section {
   width: 100%;
   text-align: left;

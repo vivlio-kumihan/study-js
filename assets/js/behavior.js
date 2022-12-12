@@ -1545,35 +1545,65 @@
 
 // /////////////////
 // // 連想配列を操作する。 => for in
+// const fruits = {
+//   apple: 200,
+//   orange: 100,
+//   banana: 150,
+//   pear : 300
+// }
 
-const fruits = {
-  apple: 200,
-  orange: 100,
-  banana: 150,
-  pear : 300
-}
+// // for in でキーを取り出し値を得る。
+// for (const key in fruits) {
+//   console.log(fruits[key])
+// }
 
-// for in でキーを取り出し値を得る。
-for (const key in fruits) {
-  console.log(fruits[key])
-}
+// // 合計する。
+// let total = 0
+// for (const key in fruits) {
+//   total += fruits[key]
+// }
+// console.log(total)
 
-// 合計する。
-let total = 0
-for (const key in fruits) {
-  total += fruits[key]
-}
-console.log(total)
+// // キーだけの配列を生成させて forEachで回す。
+// Object.keys(fruits).forEach(key => {
+//   console.log(`${key}: ${fruits[key]}`)
+// })
 
-// キーだけの配列を生成させて forEachで回す。
-Object.keys(fruits).forEach(key => {
-  console.log(`${key}: ${fruits[key]}`)
-})
+// // 連想配列に値が存在していたら ture を返す。
+// for (const key in fruits) {
+//   if (Object.hasOwnProperty.call(fruits, key)) {
+//     const element = fruits[key];
+//     console.log(element)
+//   }
+// }
 
-// 連想配列に値が存在していたら ture を返す。
-for (const key in fruits) {
-  if (Object.hasOwnProperty.call(fruits, key)) {
-    const element = fruits[key];
-    console.log(element)
-  }
+// /////////////////
+// for, forEach 文の中で使う、continue と break
+
+const li = document.querySelectorAll("li")
+
+// continue, return
+// forEachは、『continue』ではなく『return』
+// 『forEach内』で『return』すると、その時点で次のループへスキップされる。
+// つまり、例えば下のコードのように、
+// 内容に『テキスト』という文字が含まるもの『以外』の処理を変える場合に使う。
+li.forEach((element, idx) => {
+    if (element.textContent.includes("色付けしない")) return
+    element.style.color = "#fff"
+    element.style.backgroundColor = "red"
+  })
+  
+// // インデックス番号が『偶数』だったら処理をスルー（return => 入口に返して最初から。）する。
+// // つまり、インデックスの奇数番号にスタイル付をする。
+// li.forEach((element, idx) => {
+//   if (idx % 2 === 0) return
+//   element.style.color = "#fff"
+//   element.style.backgroundColor = "#333"
+// })
+
+// break
+for (let idx = 0; idx < li.length; idx++) {
+  if (idx === 5) break
+    li[idx].style.color = "#fff"
+    li[idx].style.backgroundColor = "#333"
 }
