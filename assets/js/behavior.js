@@ -1721,45 +1721,145 @@
 //   document.getElementById("afterProcessingList").appendChild(li)
 // })
 
+// /////////////////
+// // 文字（配列）を切り取って取得する。=> slice, substring
+
+// const text = "一二三四五六七八九十"
+
+// console.log(text)
+// // 第一引数だけを書くと、
+// // 下の場合、インデックス5番目の『i』それ以降の全ての文字列を取ってくる。
+// console.log(text.slice(5))      // => 六七八九十
+// console.log(text.substring(5))  // => 六七八九十
+
+// // 第一、二引数を書くと、　
+// // 下の場合、
+// // インデックス5番目の『i』から
+// // 最初から9番目まで文字列と取る。
+// console.log(text.slice(5, 9))     // => 六七八九
+// console.log(text.substring(5, 9)) // => 六七八九
+
+// // slice()は、配列でも範囲の値『配列』で書き出せる。
+// const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+// console.log(arr.slice(5, 10))
+// // => [6, 7, 8, 9, 10]
+// // // substring()は、配列に対応できない。
+// // console.log(arr.substring(5, 10))
+// // // => Uncaught TypeError: arr.substring is not a function
+
+// // 第一引数 > 第二引数の場合
+// console.log(text.slice(10, 5))
+// // => 処理と通す（エラーにならない）が何も返ってこない。
+
+// console.log(text.substring(7, 5)) // => 六七
+// // => 小さい方を第一、大きい方を第二引数と解釈して処理してくれる。
+
+// // 第二引数がマイナスの場合
+// // マイナスはpythonと違う。
+// // インデックス6番目から『後から1番目』の『前』までを選択する。
+// console.log(text.slice(6, -1))     // => 七八九
+
+// // 逆に処理する。
+// // インデックス「-1 = 0」番目から、最初から6番ままでを選択する。
+// console.log(text.substring(6, -1)) //=> 一二三四五六
+
+
 /////////////////
-// 文字（配列）を切り取って取得する。=> slice, substring
+// Jにおける配列の処理について。配列データの削除、挿入、差し替え => splice()
+const members = [
+  {
+    position: "社長",
+    name: "和田",
+    ruby: "わだ",
+    age: 45,
+  },
+  {
+    position: "部長",
+    name: "明石",
+    ruby: "あかし",
+    age: 38,
+  },
+  {
+    position: "課長",
+    name: "高木",
+    ruby: "たかぎ",
+    age: 35,
+  },
+  {
+    position: "係長",
+    name: "田中",
+    ruby: "たなか",
+    age: 30,
+  },
+  {
+    position: "社員",
+    name: "木戸",
+    ruby: "きど",
+    age: 23,
+  },
+  {
+    position: "社員",
+    name: "村田",
+    ruby: "むらた",
+    age: 22,
+  }
+]
 
-const text = "一二三四五六七八九十"
+// 現状の配列をHTMLのList表示させる。
+members.forEach(element => {
+  const li = document.createElement("li")
+  li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+  document.getElementById("memberList").appendChild(li)
+});
 
-console.log(text)
-// 第一引数だけを書くと、
-// 下の場合、インデックス5番目の『i』それ以降の全ての文字列を取ってくる。
-console.log(text.slice(5))      // => 六七八九十
-console.log(text.substring(5))  // => 六七八九十
+// // 配列をシャッフルさせるためど独自関数を定義する。
+// function arrSuffle(array) {
+//   // 配列をディープコピーする。
+//   const arr = array.slice()
 
-// 第一、二引数を書くと、　
-// 下の場合、
-// インデックス5番目の『i』から
-// 最初から9番目まで文字列と取る。
-console.log(text.slice(5, 9))     // => 六七八九
-console.log(text.substring(5, 9)) // => 六七八九
+//   for (let idx = arr.length - 1; idx >= 0; idx--) {
+//     const randomIdx = Math.floor(Math.random() * (idx + 1));
+//     [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
+//   }
+//   return arr
+// }
 
-// slice()は、配列でも範囲の値『配列』で書き出せる。
-const arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-console.log(arr.slice(5, 10))
-// => [6, 7, 8, 9, 10]
-// // substring()は、配列に対応できない。
-// console.log(arr.substring(5, 10))
-// // => Uncaught TypeError: arr.substring is not a function
+// // 一旦ここで配列をシャッフルする。
+// arrSuffle(members).forEach(member => {
+//   const li = document.createElement("li")
+//   li.textContent = `suffled ${member.position}さん: ${member.name}, ${member.age}歳`
+//   afterProcessingList.appendChild(li)
+// })
 
-// 第一引数 > 第二引数の場合
-console.log(text.slice(10, 5))
-// => 処理と通す（エラーにならない）が何も返ってこない。
+// // sort 配列をsortさせる。結果は配列で返る。
+// const resultArr = arrSuffle(members).sort((elemX, elemY) => {
+//   //『数値』は、XとYを入れ替える。
+//   // // 年齢（数値）を降順にソートする。=> Y - X
+//   // return elemY.age - elemX.age
 
-console.log(text.substring(7, 5)) // => 六七
-// => 小さい方を第一、大きい方を第二引数と解釈して処理してくれる。
+//   // // 年齢（数値）を昇順にソートする。=> X - Y
+//   // return elemX.age - elemY.age
+//   // return elemY.ruby > elemX.ruby
 
-// 第二引数がマイナスの場合
-// マイナスはpythonと違う。
-// インデックス6番目から『後から1番目』の『前』までを選択する。
-console.log(text.slice(6, -1))     // => 七八九
+//   // // 『文字列』は不等号の向きを変える。
+//   // // ふりがな（文字列）を降順にソートする。
+//   // if (elemY.ruby > elemX.ruby) {
+//   //   return 1
+//   // } else {
+//   //   return -1
+//   // }
 
-// 逆に処理する。
-// インデックス「-1 = 0」番目から、最初から6番ままでを選択する。
-console.log(text.substring(6, -1)) //=> 一二三四五六
+//   // ふりがな（文字列）昇順にソートする。
+//   if (elemY.ruby < elemX.ruby) {
+//     return 1
+//   } else {
+//     return -1
+//   }
+// })
 
+// // 変更した配列データをリストへ反ささせる。
+// resultArr.forEach(element => {
+//   const li = document.createElement("li")
+//   li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+//   document.getElementById("afterProcessingList").appendChild(li)
+// });
