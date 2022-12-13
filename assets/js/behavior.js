@@ -1873,7 +1873,12 @@
 // /////////////////
 // カスタムデータ属性（data-elemetName）—クリックに反応して背景の色を変更する。=> dataset
 
-// const colorList = document.getElementById("colorList")
+// JSで要素を追加し、datasetを効かせる。
+const newList = document.createElement("li")
+newList.textContent = "Color List4"
+newList.dataset.color = "green"
+document.querySelector(".colorList").appendChild(newList)
+
 const colorList = document.querySelectorAll(".colorList li"),
       preview = document.querySelector(".preview")
 
