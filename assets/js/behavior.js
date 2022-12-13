@@ -1765,7 +1765,8 @@
 
 
 /////////////////
-// Jにおける配列の処理について。配列データの削除、挿入、差し替え => splice()
+// JSにおける配列の処理について。配列データの削除、挿入、差し替え => splice()
+// pythonでみているスライスと同じ挙動。これです。
 const members = [
   {
     position: "社長",
@@ -1810,56 +1811,53 @@ members.forEach(element => {
   const li = document.createElement("li")
   li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
   document.getElementById("memberList").appendChild(li)
-});
+})
 
-// // 配列をシャッフルさせるためど独自関数を定義する。
-// function arrSuffle(array) {
-//   // 配列をディープコピーする。
-//   const arr = array.slice()
+// 削除する。
+// 第一引数が『一つ』=> インデックス番号3以降を削除した配列を返す。破壊的に。
+members.splice(3)
 
-//   for (let idx = arr.length - 1; idx >= 0; idx--) {
-//     const randomIdx = Math.floor(Math.random() * (idx + 1));
-//     [arr[idx], arr[randomIdx]] = [arr[randomIdx], arr[idx]]
-//   }
-//   return arr
-// }
+// 第一引数のインデックス番号3から、第二引数し指定した2つ目までの要素を削除する。破壊的に。
+members.splice(3, 2)
 
-// // 一旦ここで配列をシャッフルする。
-// arrSuffle(members).forEach(member => {
-//   const li = document.createElement("li")
-//   li.textContent = `suffled ${member.position}さん: ${member.name}, ${member.age}歳`
-//   afterProcessingList.appendChild(li)
-// })
+// // 挿入する。
+// // 第一引数のインデックス番号1の位置をマークして、その前に挿入する（第二引数が『挿入する』という意味のスイッチ）。破壊的に。
+// // 第二引数が『0』 => 0個削除する。=> 挿入する。
+// // 第3以降いくらでもオブジェクトを設置できる。
+// members.splice(0, 0, 
+//   {
+//     position: "社員",
+//     name: "高田",
+//     ruby: "たかだ",
+//     age: 57
+//   },
+//   {
+//     position: "社員",
+//     name: "南野",
+//     ruby: "みなみの",
+//     age: 59
+//   },
+//   {
+//     position: "社員",
+//     name: "林",
+//     ruby: "はやし",
+//     age: 35
+//   })
 
-// // sort 配列をsortさせる。結果は配列で返る。
-// const resultArr = arrSuffle(members).sort((elemX, elemY) => {
-//   //『数値』は、XとYを入れ替える。
-//   // // 年齢（数値）を降順にソートする。=> Y - X
-//   // return elemY.age - elemX.age
+// // 最初に追加は『0』でできる。
+// // 最後に追加は？ spliceでは無理なよう。
+// // 配列の最後にオブジェクトを追加する。
+// members.push(
+//   {
+//     position: "社員",
+//     name: "高広",
+//     ruby: "たかひろ",
+//     age: 57
+//   })
 
-//   // // 年齢（数値）を昇順にソートする。=> X - Y
-//   // return elemX.age - elemY.age
-//   // return elemY.ruby > elemX.ruby
-
-//   // // 『文字列』は不等号の向きを変える。
-//   // // ふりがな（文字列）を降順にソートする。
-//   // if (elemY.ruby > elemX.ruby) {
-//   //   return 1
-//   // } else {
-//   //   return -1
-//   // }
-
-//   // ふりがな（文字列）昇順にソートする。
-//   if (elemY.ruby < elemX.ruby) {
-//     return 1
-//   } else {
-//     return -1
-//   }
-// })
-
-// // 変更した配列データをリストへ反ささせる。
-// resultArr.forEach(element => {
-//   const li = document.createElement("li")
-//   li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
-//   document.getElementById("afterProcessingList").appendChild(li)
-// });
+// 変更した配列データをリストへ反映させる。
+members.forEach(element => {
+  const li = document.createElement("li")
+  li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+  document.getElementById("afterProcessingList").appendChild(li)
+}) 
