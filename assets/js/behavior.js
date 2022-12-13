@@ -1764,54 +1764,54 @@
 // console.log(text.substring(6, -1)) //=> 一二三四五六
 
 
-/////////////////
-// JSにおける配列の処理について。配列データの削除、挿入、差し替え => splice()
-// pythonでみているスライスと同じ挙動。これです。
-const members = [
-  {
-    position: "社長",
-    name: "和田",
-    ruby: "わだ",
-    age: 45,
-  },
-  {
-    position: "部長",
-    name: "明石",
-    ruby: "あかし",
-    age: 38,
-  },
-  {
-    position: "課長",
-    name: "高木",
-    ruby: "たかぎ",
-    age: 35,
-  },
-  {
-    position: "係長",
-    name: "田中",
-    ruby: "たなか",
-    age: 30,
-  },
-  {
-    position: "社員",
-    name: "木戸",
-    ruby: "きど",
-    age: 23,
-  },
-  {
-    position: "社員",
-    name: "村田",
-    ruby: "むらた",
-    age: 22,
-  }
-]
+// /////////////////
+// // JSにおける配列の処理について。配列データの削除、挿入、差し替え => splice()
+// // pythonでみているスライスと同じ挙動。これです。
+// const members = [
+//   {
+//     position: "社長",
+//     name: "和田",
+//     ruby: "わだ",
+//     age: 45,
+//   },
+//   {
+//     position: "部長",
+//     name: "明石",
+//     ruby: "あかし",
+//     age: 38,
+//   },
+//   {
+//     position: "課長",
+//     name: "高木",
+//     ruby: "たかぎ",
+//     age: 35,
+//   },
+//   {
+//     position: "係長",
+//     name: "田中",
+//     ruby: "たなか",
+//     age: 30,
+//   },
+//   {
+//     position: "社員",
+//     name: "木戸",
+//     ruby: "きど",
+//     age: 23,
+//   },
+//   {
+//     position: "社員",
+//     name: "村田",
+//     ruby: "むらた",
+//     age: 22,
+//   }
+// ]
 
-// 現状の配列をHTMLのList表示させる。
-members.forEach(element => {
-  const li = document.createElement("li")
-  li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
-  document.getElementById("memberList").appendChild(li)
-})
+// // 現状の配列をHTMLのList表示させる。
+// members.forEach(element => {
+//   const li = document.createElement("li")
+//   li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+//   document.getElementById("memberList").appendChild(li)
+// })
 
 // // 削除する。
 // // 第一引数が『一つ』=> インデックス番号3以降を削除した配列を返す。破壊的に。
@@ -1855,18 +1855,37 @@ members.forEach(element => {
 //     age: 57
 //   })
 
-// 差し替え
-members.splice(1, 1, {
-  position: "社員",
-  name: "高広",
-  ruby: "たかひろ",
-  age: 57
+// // 差し替え
+// members.splice(1, 1, {
+//   position: "社員",
+//   name: "高広",
+//   ruby: "たかひろ",
+//   age: 57
+// })
+
+// // 変更した配列データをリストへ反映させる。
+// members.forEach(element => {
+//   const li = document.createElement("li")
+//   li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
+//   document.getElementById("afterProcessingList").appendChild(li)
+// }) 
+
+// /////////////////
+// カスタムデータ属性（data-elemetName）—クリックに反応して背景の色を変更する。=> dataset
+
+// const colorList = document.getElementById("colorList")
+const colorList = document.querySelectorAll(".colorList li"),
+      preview = document.querySelector(".preview")
+
+// HTMLで設定したカスタムデータの属性を取得する。　
+// こんな風に略ししている感じで覚える。
+// < li data-color="red" >
+// (data) + (-) + (color) => data_set.color 
+colorList.forEach(element => {
+  console.log(element.dataset.color)
+  element.addEventListener("click", () => {
+    const color = element.dataset.color
+    preview.style.backgroundColor = color
+    preview.textContent = color
+  })
 })
-
-
-// 変更した配列データをリストへ反映させる。
-members.forEach(element => {
-  const li = document.createElement("li")
-  li.textContent = `${element.name}さん：${element.position}, ${element.age}歳`
-  document.getElementById("afterProcessingList").appendChild(li)
-}) 

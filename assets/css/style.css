@@ -26,9 +26,32 @@ body {
 section {
   width: 100%;
   text-align: left;
-  background-color: #eee;
 }
 
+ul {
+  background-color: #eee;
+
+}
+li {
+  padding: 1rem;
+  cursor: pointer;
+}
+li::before {
+  content: "=> ";
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 200px;
+  margin-top: 2rem;
+  color: #fff;
+  border: 1px solid #333;
+}
+/* 
 ul {
   padding: 2rem;
   background-color: rgb(253, 253, 177);
@@ -50,7 +73,7 @@ h1 {
 h2 {
   padding: .5rem 1rem;
   font-weight: 700;
-}
+} */
 
 
 /*
