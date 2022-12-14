@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+html { 
+  font-size: 15px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+
+.slide-container {
+  position: relative;
+}
+.slide-container h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: .5rem;
+  color: #fff;
+  z-index: 100;
+}
+.swiper-slide {
+  position: relative;
+  height: 600px;
+  background-size: cover;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-slide p {
+  position: absolute;
+
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #555;
+}
+
+.swiper-slide.slide1 p {
+    top: 3rem;
+    left: 3rem;
+}
+.swiper-slide.slide2 p {
+    top: 3rem;
+    right: 3rem;
+}
+.swiper-slide.slide3 p {
+    bottom: 3rem;
+    right: 3rem;
+}
+.swiper-slide.slide4 p {
+    bottom: 3rem;
+    left: 3rem;
+}
+.swiper-slide.slide5 p {
+    top: 3rem;
+    left: 3rem;
+}
+.swiper-slide.slide6 p {
+    top: 3rem;
+    right: 3rem;
+}
+
+.swiper-slide.slide1 {
+  background-image: url(../img/bird-01.jpeg);
+}
+
+.swiper-slide.slide2 {
+  background-image: url(../img/bird-02.jpeg);
+}
+
+.swiper-slide.slide3 {
+  background-image: url(../img/bird-03.jpeg);
+}
+
+.swiper-slide.slide4 {
+  background-image: url(../img/bird-04.jpeg);
+}
+
+.swiper-slide.slide5 {
+  background-image: url(../img/bird-05.jpeg);
+}
+
+.swiper-slide.slide6 {
+  background-image: url(../img/bird-06.jpeg);
+} 

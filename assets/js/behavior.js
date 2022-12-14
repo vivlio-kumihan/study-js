@@ -1908,16 +1908,35 @@
 // })
 
 
-// /////////////////
-// タグ挿入をJSで操作する。=> insertAdjacentHTML
+// // /////////////////
+// // タグ挿入をJSで操作する。=> insertAdjacentHTML
 
+// const main = document.querySelector("main"),
+//       head3 = document.createElement("h3")
+
+// // ターゲットにしている『要素の前・後』に新たに要素を追加する。
+// main.insertAdjacentHTML('beforebegin', '<div class="red">前の最初</div>')
+// main.insertAdjacentHTML('afterend', '<div class="orange">後の最後</div>')
+
+// // ターゲットにしている『要素の内側』の『最初・最後』に新たに要素を追加する。
+// main.insertAdjacentHTML('afterbegin', '<div class="green">後の最初</div>')
+// main.insertAdjacentHTML('beforeend', '<div class="blue">前の最後</div>')
+
+
+// 要素を挿入 => appendChild, before, after
 const main = document.querySelector("main"),
-      head3 = document.createElement("h3")
+      pgh = document.createElement("p")
 
-// ターゲットにしている『要素の前・後』に新たに要素を追加する。
-main.insertAdjacentHTML('beforebegin', '<div class="red">前の最初</div>')
-main.insertAdjacentHTML('afterend', '<div class="orange">後の最後</div>')
+pgh.textContent = "hello, hello, hello!"
+// appendChild　指定した要素の子要素、その一番最後に追加する。
+main.appendChild(pgh)
 
-// ターゲットにしている『要素の内側』の『最初・最後』に新たに要素を追加する。
-main.insertAdjacentHTML('afterbegin', '<div class="green">後の最初</div>')
-main.insertAdjacentHTML('beforeend', '<div class="blue">前の最後</div>')
+const head2 = document.querySelector("main h2"),
+      divBefore = document.createElement("div.before"),
+      divAfter = document.createElement("div.after")
+console.log(head2)
+divBefore.textContent = "h2の『前』に文章を挿入する。"
+divAfter.textContent = "h2の『後』に文章を挿入する。"
+
+head2.before(divBefore)
+head2.after(divAfter)
