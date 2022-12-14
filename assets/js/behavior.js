@@ -1895,3 +1895,29 @@
 //   })
 // })
 
+
+// /////////////////
+// // a要素のhref属性が『http』の値を含むものを配列に格納する。
+// // 正規表現「的」な書き方
+// // ^（先頭）がhttpから始ま（＝イコールである）『a要素』
+// const targetLi = document.querySelectorAll("header a[href^=http]")
+// console.log(targetLi)
+
+// targetLi.forEach(element => {
+//   element.setAttribute("target", "_blank")
+// })
+
+
+// /////////////////
+// タグ挿入をJSで操作する。=> insertAdjacentHTML
+
+const main = document.querySelector("main"),
+      head3 = document.createElement("h3")
+
+// ターゲットにしている『要素の前・後』に新たに要素を追加する。
+main.insertAdjacentHTML('beforebegin', '<div class="red">前の最初</div>')
+main.insertAdjacentHTML('afterend', '<div class="orange">後の最後</div>')
+
+// ターゲットにしている『要素の内側』の『最初・最後』に新たに要素を追加する。
+main.insertAdjacentHTML('afterbegin', '<div class="green">後の最初</div>')
+main.insertAdjacentHTML('beforeend', '<div class="blue">前の最後</div>')
