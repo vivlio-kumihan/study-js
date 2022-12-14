@@ -1,397 +1,48 @@
 @charset "UTF-8";
 
+/* サイト設計　PCサイト、固定header + menu付き、main */
 html {
   font-size: 15px;
 }
 
 body {
   font-size: 1.5rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 900;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
   color: #555;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  width: 60%;
+  width: 100%;
   height: 100vh;
-  margin: 0 auto;
-  text-align: left;
 }
 
-section {
-  width: 100%;
-  text-align: left;
-}
-
-ul {
-  background-color: #eee;
-
-}
-li {
-  padding: 1rem;
-  cursor: pointer;
-}
-li::before {
-  content: "=> ";
-}
-
-.preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 200px;
-  height: 200px;
-  margin-top: 2rem;
-  color: #fff;
-  border: 1px solid #333;
-}
-/* 
-ul {
-  padding: 2rem;
-  background-color: rgb(253, 253, 177);
-}
-
-li::before {
-  content: "=>";
-}
-
-li:not(:first-of-type) {
-  margin-top: 1rem;
-}
-
-h1 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-h2 {
-  padding: .5rem 1rem;
-  font-weight: 700;
-} */
-
-
-/*
-
-li {
-  padding: 1rem;
-} */
-
-/* section {
-  width: 100%;
-  text-align: left;
-  background-color: #eee;
-}
-ul {
-  padding: 2rem;
-  background-color: rgb(253, 253, 177);
-}
-li::before {
-  content: "=>";
-}
-li:not(:first-of-type) {
-  margin-top: 1rem;
-} */
-
-/* h2 {
-  padding: .5rem 1rem;
-  font-weight: 700;
-} */
-
-/* #output {
-  text-align: center;
-  padding: 2rem;
-} */
-
-
-/* 
-#test {
-  width: 40%;
-  padding: 4rem 0;
-  text-align: center;
-  background-color: #eee;
-  border-radius: .5rem;
-} */
-
-/* button {
-  margin: 5rem;
-  padding: 1rem 2rem;
-  color: #fff;
-  background-color: #555;
-  border-radius: .5rem;
-}
-
-#contents {
-  font-size: 2rem;
-  font-weight: 900;
-  display: none;
-} */
-
-
-/*
-#scroll-position {
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-
-  padding: 1rem;
-  color: #fff;
+header {
+  padding: 0 2rem;
   background-color: #333;
-  border-radius: .3rem;
 }
 
-.test {
-  font-weight: 900;
-  color: #fff;
-  background-color: red ;
-  transition: .7s;
-} */
-
-
-
-
-
-
-
-
-
-/* #view-area {
+header ul {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* align-itemsは高さが設定されていて始めて聞いてくる属性 */
   align-items: center;
-
-  width: 60%;
-  margin-bottom: 1rem;
-  padding: 1rem 2rem;
-  text-align: center;
-  color: #fff;
-  background-color: #999;
-  border-radius: 5px;
-} */
-
-/* label {
-  font-size: 1rem;
-  color: #999;
+  height: 4rem;
 }
 
-input {
-  display: block;
-  width: 400px;
-  margin: .5rem 0 2rem;
-  padding: 0.5rem 0;
-  text-align: center;
-  font-size: 1rem;
+/* 最初以外の属に対して効果を付ける。【2種類の書き方】 */
+header li:not(:first-of-type) {
+  padding-left: 2rem;
+}
+
+/* header li + li {
+  padding-left: 2rem;
+} */
+header a {
+  color: #fff;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
   background-color: #eee;
-  border-radius: 3px;
-  color: #555;
 }
-
-input::placeholder {
-  color: #999;
-}
-
-input[type="button"] {
-  color: #fff;
-  background-color: blue;
-} */
-
-/* 
-label {
-  font-size: 1rem;
-  color: #999;
-}
-
-input {
-  display: block;
-  width: 400px;
-  margin: .5rem 0 2rem;
-  padding: 0.5rem 0;
-  text-align: center;
-  font-size: 1rem;
-  background-color: #eee;
-  border-radius: 3px;
-  color: #555;
-}
-
-input::placeholder {
-  color: #999;
-}
-
-input[type="button"] {
-  color: #fff;
-  background-color: blue;
-}
-
-/* 
-#button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 50px;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-  background-color: antiquewhite;
-  border-radius: 3px;
-  text-transform: uppercase;
-}
-
-#button:hover {
-  color: #fff;
-  background-color: rgb(244, 152, 31);
-}
- */
-
-/* #result {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 50%;
-  margin-bottom: 2rem;
-  padding: 2rem;
-  font-size: 1.2rem;
-  background-color: #eee;
-} */
-
-/* #box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 40%;
-  height: 10rem;
-  font-size: 2rem;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 0,800;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #000;
-  border-radius: .5rem;
-} */
-
-
-
-/* ul {
-  width: 40%;
-  padding: 3rem;
-  background-color: #eee;
-  border-radius: 5px;
-}
-
-li {
-  text-align: center;
-}
-
-li:not(:first-of-type) {
-  margin-top: 1rem;
-} */
-
-
-/* h3 {
-  margin-bottom: 1rem;
-}
-
-label {
-  font-size: 1rem;
-  color: #999;
-}
-
-input {
-  display: block;
-  width: 400px;
-  margin-bottom: 1rem;
-  padding: 0.5rem 0;
-  text-align: center;
-  font-size: 1rem;
-  background-color: #eee;
-  border-radius: 3px;
-  color: #555;
-}
-
-input::placeholder {
-  color: #999;
-}
-
-input[type="button"] {
-  color: #fff;
-  background-color: blue;
-}
-
-li {
-  display: inline-block;
-}
-li:not(:first-of-type) {
-  margin-left: 1rem;
-  padding-bottom: 1rem;
-} */
-
-/* #test {
-} */
-
-/* 
-#switchButton {
-  width: 80%;
-  margin-bottom: 20px;
-  padding: 5px;
-  text-align: center;
-  background-color: rgb(228, 210, 142);
-  border-radius: 3px;
-  cursor: pointer;
-  opacity: 1;
-}
-
-#switchButton.add-behavior {
-  opacity: 0;
-  transition: 4s;
-}
-
-.result {
-  width: 200px;
-  padding: 5px 0 13px;
-  text-align: center;
-  line-height: 1;
-  color: #eee;
-  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.85);
-  background-color: rgb(253, 114, 34);
-  border-radius: 3px;
-  opacity: 0;
-}
-
-.opty {
-  opacity: 1;
-  transition: 8s;
-}
- */
-
-/* センターセンターのやりかた　221118時点で最初に思いついたやり方。 */
-
-/* justify-content: center; => 左右センター */
-/* align-items: center; 　　=>上下センター */
-
-/* .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-} */
-
-/* #switchClasses {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 30%;
-  padding: 5px;
-  font-size: 20px;
-  text-align: center;
-  background-color: aquamarine;
-  border-radius: 3px;
-} */
