@@ -1,33 +1,52 @@
 @charset "UTF-8";
 
+/* サイト設計　PCサイト、固定header + menu付き、main */
 html {
   font-size: 15px;
 }
 
 body {
   font-size: 1.5rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 900;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
   color: #555;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  width: 60%;
-  height: 100vh;
-  margin: 0 auto;
-  text-align: left;
-}
-
-section {
   width: 100%;
-  text-align: left;
+  height: 100vh;
 }
 
+header {
+  padding: 0 2rem;
+  background-color: #333;
+}
+
+header ul {
+  display: flex;
+  /* align-itemsは高さが設定されていて始めて聞いてくる属性 */
+  align-items: center;
+  height: 4rem;
+}
+/* 最初以外の属に対して効果を付ける。【2種類の書き方】 */
+header li:not(:first-of-type) {
+  padding-left: 2rem;
+}
+/* header li + li {
+  padding-left: 2rem;
+} */
+header a {
+  color: #fff;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #eee;
+}
+
+
+/* 
 ul {
   background-color: #eee;
 
@@ -50,7 +69,7 @@ li::before {
   margin-top: 2rem;
   color: #fff;
   border: 1px solid #333;
-}
+} */
 /* 
 ul {
   padding: 2rem;

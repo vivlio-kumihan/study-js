@@ -1873,24 +1873,25 @@
 // /////////////////
 // カスタムデータ属性（data-elemetName）—クリックに反応して背景の色を変更する。=> dataset
 
-// JSで要素を追加し、datasetを効かせる。
-const newList = document.createElement("li")
-newList.textContent = "Color List4"
-newList.dataset.color = "green"
-document.querySelector(".colorList").appendChild(newList)
+// // JSで要素を追加し、datasetを効かせる。
+// const newList = document.createElement("li")
+// newList.textContent = "Color List4"
+// newList.dataset.color = "green"
+// document.querySelector(".colorList").appendChild(newList)
 
-const colorList = document.querySelectorAll(".colorList li"),
-      preview = document.querySelector(".preview")
+// const colorList = document.querySelectorAll(".colorList li"),
+//       preview = document.querySelector(".preview")
 
-// HTMLで設定したカスタムデータの属性を取得する。　
-// こんな風に略ししている感じで覚える。
-// < li data-color="red" >
-// (data) + (-) + (color) => data_set.color 
-colorList.forEach(element => {
-  console.log(element.dataset.color)
-  element.addEventListener("click", () => {
-    const color = element.dataset.color
-    preview.style.backgroundColor = color
-    preview.textContent = color
-  })
-})
+// // HTMLで設定したカスタムデータの属性を取得する。　
+// // こんな風に略ししている感じで覚える。
+// // < li data-color="red" >
+// // (data) + (-) + (color) => data_set.color 
+// colorList.forEach(element => {
+//   console.log(element.dataset.color)
+//   element.addEventListener("click", () => {
+//     const color = element.dataset.color
+//     preview.style.backgroundColor = color
+//     preview.textContent = color
+//   })
+// })
+
