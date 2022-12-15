@@ -1,19 +1,28 @@
 //////////////////////////////////////////////////
 // 配列
-// 配列の中身をforEachを使いHTMLのリストで出力する。
+// querySelector() => .childrenでHTMLCollectionを吐き出す。forEach()では使えない。
+// querySelectorAll() => NodeListとを吐き出す。
 
-// 引数は、Element, Index, Arrayを持てる。()で括らないとエラーになる。
-const fruit = ["apple", "banana", "orange", "grape", "melon"];
-fruit.forEach((name, idx, array) => {
-  let li = document.createElement("li");
-  li.textContent = fruit[idx];
-  document.getElementById("fruits").appendChild(li);
-})
+// ulの子要素で配下のliが配列として全て取れる。
+// elementに入っているのはHTML。valueが欲しい場合は、.textContentを充てる。
+const lists = document.querySelector("ul").children
+// HTMLCollectionとして取っている。
+// HTMLCollection(5)[li.list, li.list, li.list, li.list, li.list]
+console.log(lists)
 
-// 普通は、Elementだけでだろう。
-const member = ["木田","竹中","高広","小林"]
-member.forEach(element => {
-  let li =document.createElement("li")
-  li.textContent = element
-  document.getElementById("member").appendChild(li)
-})
+for (let idx = 0; idx < lists.length; idx++) {
+  const element = lists[idx];
+  console.log(idx, element)
+  console.log(idx, element.textContent)
+}
+
+// // forEachでは、『children』が使えないということ。
+// const foreachLists = document.querySelectorAll(".list")
+// // NodeListとして取っている。この差だわ。
+// // NodeList(5)[li.list, li.list, li.list, li.list, li.list]
+// console.log(foreachLists)
+
+// foreachLists.forEach((element, idx) => {
+//   console.log(idx, element)
+//   console.log(idx, element.textContent)
+// })

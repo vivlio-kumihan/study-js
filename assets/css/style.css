@@ -26,11 +26,10 @@ main {
 
 main ul {
   margin-top: 3rem;
-  padding: 1rem 0;
+  padding: 2rem;
   font-size: 1.5rem;
   font-weight: 700;
-  text-align: center;
   color: rgb(135, 35, 0);
   background-color: #eee;
-  border-radius: .5rem;
+  border-radius: .2rem;
 }
