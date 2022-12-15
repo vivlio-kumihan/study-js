@@ -1,12 +1,11 @@
 //////////////////////////////////////////////////
 // 配列
-// 子要素の操作。子要素の最初と最後を選ぶ。=> firstElementChild, lastElementChild
+// 兄弟要素の操作。=> nextElementSibling, previousElementSibling
 
-const selectLiID = document.getElementById("list")
-console.log(selectLiID)
-console.log(selectLiID.firstElementChild.textContent)
-console.log(selectLiID.lastElementChild.textContent)
+// 次にある、兄弟要素を取得する。　nextElementSibling
+const list1 = document.querySelector(".list li");
+console.log(list1.nextElementSibling);
 
-const selectLiClass = document.querySelector(".list")
-console.log(selectLiClass.firstElementChild.textContent)
-console.log(selectLiClass.lastElementChild.textContent)
+// 前にある、兄弟要素を取得する。　previousElementSibling
+const list2 = document.querySelector(".list");
+console.log(list2.lastElementChild.previousElementSibling);
