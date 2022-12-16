@@ -72,19 +72,19 @@ body {
 #menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   padding: 1rem 2rem;
   background-color: rgb(155, 245, 215);
   /* 透明にして隠しても、要素の存在はあるからクリックできる。
      回避するために『visibility: hidden』は必須。 */
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: 0.5s; 
 }
 #menu.active {
-  /* left: 0; */
+  left: 0;
   opacity: 1;
-  visibility: visible;
+  /* visibility: visible; */
 }
 
 #menu li:not(:first-of-type) {
