@@ -17,8 +17,9 @@ body {
   background-color: #333;
 } */
 
-a {
+#menuButton {
   display: block;
+
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -67,6 +68,32 @@ a {
   bottom: 25%;
   left: 27.5%;
 }
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  background-color: rgb(155, 245, 215);
+  /* 透明にして隠しても、要素の存在はあるからクリックできる。
+     回避するために『visibility: hidden』は必須。 */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s; 
+}
+#menu.active {
+  /* left: 0; */
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu li:not(:first-of-type) {
+  margin-top: 1rem;
+}
+/* 別の記述方法 */
+/* #menu li + li {
+  margin-top: 1rem;
+} */
 
 /* main {
   margin: 0 auto;
