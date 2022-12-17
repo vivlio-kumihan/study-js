@@ -1,8 +1,10 @@
 // for ハンバーガーボタン
 // toggleで効果のかかりをスイッチング
-const menuButton = document.getElementById("menuButton"),
+const menuBtn = document.getElementById("menuButton"),
       menu = document.getElementById("menu")
-menuButton.addEventListener("click", () => {
-  menuButton.classList.toggle("active")
+      coverBg = document.getElementById("cover-background")
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active")
   menu.classList.toggle("active")
+  coverBg.classList.toggle("active")
 })
