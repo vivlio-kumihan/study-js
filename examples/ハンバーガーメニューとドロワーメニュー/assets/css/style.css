@@ -17,7 +17,7 @@ body {
   background-color: #333;
 } */
 
-#menuButton {
+#menu-button {
   display: block;
 
   position: fixed;
@@ -33,7 +33,7 @@ body {
   z-index: 100;
 }
 
-.menuButton div {
+.menu-button div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,13 +47,13 @@ body {
   transition: .3s;
 }
 
-.menuButton.active {
+.menu-button.active {
   transform: rotate(-180deg);
 }
-.menuButton div:nth-of-type(1) {
+.menu-button div:nth-of-type(1) {
   top: 30%;
 }
-.menuButton.active div:nth-of-type(1) {
+.menu-button.active div:nth-of-type(1) {
   transform: rotate(45deg);
   transform-origin: top left;
   top: 22%;
@@ -61,44 +61,74 @@ body {
 }
 
 /* ハンバーガーメニューの真ん中の線を消して、背景を丸形に変形させる。 */
-.menuButton.active div:nth-of-type(2) {
+.menu-button.active div:nth-of-type(2) {
   /* 注目1 発生側 */
   opacity: 0;
 }
-#menuButton.active {
+#menu-button.active {
   border-radius: 50%;
 }
 
-.menuButton div:nth-of-type(3) {
+.menu-button div:nth-of-type(3) {
   top: 70%;
 }
-.menuButton.active div:nth-of-type(3) {
+.menu-button.active div:nth-of-type(3) {
   transform: rotate(-45deg);
   transform-origin: bottom left;
   bottom: 8%;
   left: 28%;
 }
 
-#menu {
+#links-menu {
   position: fixed;
   top: 0;
   left: -100%;
-  padding: 1rem 2rem;
+
+  width: 12rem;
+  /*  max-heightにする意味
+      リストを表示させたい時は、"overflow: auto;"を指定する。
+      その際、親要素に高さを指定する必要がある。
+      "height: 100vh;"とするとスクロールされる。
+      ただ、
+      子要素を"display: flex;"、"justify-content: center;"で
+      建て付けた場合にスクロールされない問題が発生する。
+      回避策は、親要素の高さを"max-height: 100vh;"で解決できる。 */
+  max-height: 100vh;
+  padding: 2rem 0 2rem;
   background-color: rgb(155, 245, 215);
-  /* 透明にして隠しても、要素の存在はあるからクリックできる。
-     回避するために『visibility: hidden』は必須。 */
+  overflow: auto;
+  /*  『opacity: 0』でオブジェクトを透明にして
+      『隠して』も、要素の存在はあるからクリックできてしまう。
+      つまり、透明して隠す場合は、回避するために
+      『visibility: hidden』は必須。
+      ただ、設置位置を『-100％』で隠くす施作では必要がない。 */
+      /* visibility: hidden; */
   opacity: 0;
-  /* visibility: hidden; */
   transition: 0.5s;
-  z-index: 99; 
+  z-index: 99;
 }
-#menu.active {
+#links-menu.active {
   left: 0;
   opacity: 1;
-  /* visibility: visible; */
+  /* 『opacity: 0』でオブジェクトを透明にして 『隠す』。
+      アクティブになった場合はリンクを有効にさせなければならない。*/
+      /* visibility: visible; */
 }
 
-#menu li:not(:first-of-type) {
+#links-menu ul {
+  display: flex;
+  flex-direction: column;
+  /* 縦軸Y:0からスタートさせる。 */
+  /* justify-content: flex-start; */
+  justify-content: center;
+  /* 左右中央 */
+  align-items: center;
+  /* "注意：justify-content: center"を指定したい場合、
+      縦の高さを指定しないと設定できない。 */
+  height: 100%;
+}
+
+#links-menu li:not(:first-of-type) {
   margin-top: 1rem;
 }
 /* 別の記述方法 */
