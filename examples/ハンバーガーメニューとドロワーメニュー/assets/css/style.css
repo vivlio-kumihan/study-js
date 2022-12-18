@@ -28,6 +28,9 @@ body {
   height: 3rem;
   background-color: rgb(0, 60, 40);
   border-radius: .5rem;
+  /* 背景の角丸を丸形に変形させとときにスムーズに見せたための時間差設定。 */
+  transition: 0.8s;
+  z-index: 100;
 }
 
 .menuButton div {
@@ -44,6 +47,9 @@ body {
   transition: .3s;
 }
 
+.menuButton.active {
+  transform: rotate(-180deg);
+}
 .menuButton div:nth-of-type(1) {
   top: 30%;
 }
@@ -54,9 +60,13 @@ body {
   left: 28%;
 }
 
+/* ハンバーガーメニューの真ん中の線を消して、背景を丸形に変形させる。 */
 .menuButton.active div:nth-of-type(2) {
   /* 注目1 発生側 */
   opacity: 0;
+}
+#menuButton.active {
+  border-radius: 50%;
 }
 
 .menuButton div:nth-of-type(3) {
@@ -79,7 +89,8 @@ body {
      回避するために『visibility: hidden』は必須。 */
   opacity: 0;
   /* visibility: hidden; */
-  transition: 0.5s; 
+  transition: 0.5s;
+  z-index: 99; 
 }
 #menu.active {
   left: 0;
@@ -102,11 +113,11 @@ body {
 
   width: 100%;
   height: 100vh;
-  background-color:rgba(51,51,51,0.5);
+  background-color:rgba(51,51,51,0.9);
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
-  z-index: -100;
+  z-index: 98;
 }
 
 #cover-background.active {
@@ -114,9 +125,11 @@ body {
   visibility: visible;
 }
 
-/* main {
+main {
+  width: 100%;
+  height: 200vh;
   margin: 0 auto;
   padding: 1rem;
   background-color: #eee;
-} */
+}
 
