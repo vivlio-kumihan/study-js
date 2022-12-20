@@ -19,8 +19,9 @@ body {
 
 #parent-link-list>li>a {
   display: block;
-  padding: .5rem 1rem;
-  background-color: #ccc;
+  height: 100%;
+  color: #fff;
+  background-color: #555;
 }
 
 #parent-link-list>li>ul a {
@@ -28,9 +29,11 @@ body {
   padding: .25rem 1rem;
   background-color: #aaa;
 }
-
 #parent-link-list a {
   transition: .5s;
+}
+#parent-link-list>li>a:hover {
+  background-color: #999;
 }
 #parent-link-list a:hover {
   opacity: .7;
@@ -47,12 +50,9 @@ body {
   display:block;
 }
 #parent-link-list ul.active li {
-  opacity: .1;
+  opacity: .8;
   transition: 1s;
 }
-
-
-
 
 @media screen and (max-width:480px) {
   /* ハンバーガーメニューボタン */
@@ -147,6 +147,13 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  #parent-link-list>li>a {
+    padding: 1rem 2rem;
+  }
+  #parent-link-list li:not(:first-of-type) {
+    border-top: 1px solid #ddd;
+  }
 }
 
 @media screen and (min-width: 481px) {
@@ -154,9 +161,26 @@ body {
     display: flex;
     justify-content:space-between;
     align-items: center;
+
+    position: relative;
     
     padding: 0 2rem;
+    height: 3rem;
     background-color: #555;
+  }
+
+  #links-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #parent-link-list {
+    height: 3rem;
+  }
+
+  #parent-link-list>li>a {
+    padding: .8rem 1rem 0;
   }
 }
 
@@ -174,4 +198,9 @@ main {
   margin: 0 auto;
   background-color: #eee;
 
+}
+
+.logo {
+  font-weight: 900;
+  color: #fff;
 }
