@@ -1931,12 +1931,12 @@ pgh.textContent = "hello, hello, hello!"
 // appendChild　指定した要素の子要素、その一番最後に追加する。
 main.appendChild(pgh)
 
-const head2 = document.querySelector("main h2"),
-      divBefore = document.createElement("div.before"),
-      divAfter = document.createElement("div.after")
-console.log(head2)
-divBefore.textContent = "h2の『前』に文章を挿入する。"
-divAfter.textContent = "h2の『後』に文章を挿入する。"
+// const head2 = document.querySelector("main h2"),
+//       divBefore = document.createElement("div.before"),
+//       divAfter = document.createElement("div.after")
+// console.log(head2)
+// divBefore.textContent = "h2の『前』に文章を挿入する。"
+// divAfter.textContent = "h2の『後』に文章を挿入する。"
 
-head2.before(divBefore)
-head2.after(divAfter)
+// head2.before(divBefore)
+// head2.after(divAfter)
