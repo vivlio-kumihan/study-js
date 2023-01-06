@@ -1,7 +1,22 @@
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // 自動でループ挿せる際に、最後のスライドから最初へ遷移でバグがある。
-  // それの回避方法が『loop: true』
+  effect: 'coverflow',
+  // 一度に見えるスライドの数を設定する。
+  // 『CSSのpadding』でスライドが見切れてしまうのを回避することを忘れずに。
+  slidesPerView: 3,
+  // 先頭のスライドをセンター位置にする。
+  centeredSlides: true,
+  coverflowEffect: {
+    // 両サイドのスライドがトップスライドと重なる箇所に影を入れる。デフォルトは『true』
+    slideShadows: true,
+    // 両サイドのスライドの角度　デフォルトは『50』
+    rotate: 20,
+    // スライドの間隔を狭める　デフォルトは『0』
+    stretch: 100,
+    // スライドの列の奥行き
+    depth: 50,
+    // スライドを回転させる
+    modifier: 8
+  },
   loop: true,
   speed: 1000,
   autoplay: {
@@ -12,7 +27,7 @@ const swiper = new Swiper('.swiper', {
   // ページネーションをクリックして該当写真まで移動
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
 
   // ナビゲーションのタブを表示
