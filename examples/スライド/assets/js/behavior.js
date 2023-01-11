@@ -1,12 +1,6 @@
 const swiper = new Swiper(".swiper", {
-  effect: 'cube',
-  cubeEffect: {
-    shadow: true,
-    slideShadow: true,
-    shadowOffset: 100,
-    shadowScale:0.9
-  },
-  // 『効果』のスピードを変えるオプション
+  slidesPerView: 3,
+  centeredSlides: true,
   speed: 1000,
   loop: true,
   autoplay: {
