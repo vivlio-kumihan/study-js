@@ -1923,20 +1923,43 @@
 // main.insertAdjacentHTML('beforeend', '<div class="blue">前の最後</div>')
 
 
-// 要素を挿入 => appendChild, before, after
-const main = document.querySelector("main"),
-      pgh = document.createElement("p")
+// // 要素を挿入 => appendChild, before, after
+// const main = document.querySelector("main"),
+//       pgh = document.createElement("p")
 
-pgh.textContent = "hello, hello, hello!"
-// appendChild　指定した要素の子要素、その一番最後に追加する。
-main.appendChild(pgh)
+// pgh.textContent = "hello, hello, hello!"
+// // appendChild　指定した要素の子要素、その一番最後に追加する。
+// main.appendChild(pgh)
 
-const head2 = document.querySelector("main h2"),
-      divBefore = document.createElement("div.before"),
-      divAfter = document.createElement("div.after")
-console.log(head2)
-divBefore.textContent = "h2の『前』に文章を挿入する。"
-divAfter.textContent = "h2の『後』に文章を挿入する。"
+// const head2 = document.querySelector("main h2"),
+//       divBefore = document.createElement("div.before"),
+//       divAfter = document.createElement("div.after")
+// console.log(head2)
+// divBefore.textContent = "h2の『前』に文章を挿入する。"
+// divAfter.textContent = "h2の『後』に文章を挿入する。"
 
-head2.before(divBefore)
-head2.after(divAfter)
+// head2.before(divBefore)
+// head2.after(divAfter)
+
+
+// // どこまでスクロールしたかでCSSを切替える。
+// window.addEventListener("scroll", function () {
+//   let scroll = document.documentElement.scrollTop
+//   if (scroll > 300) {
+//     document.querySelector("ul").classList.add("test")
+//   } else {
+//     document.querySelector("ul").classList.remove("test")
+//   }
+// })
+// どこまでスクロールしたかでCSSを切替える。
+window.addEventListener("scroll", () => {
+  let scroll = window.scrollY
+
+  document.getElementById("scroll-position").textContent = scroll
+
+  if (scroll > 300) {
+    document.querySelector("ul").classList.add("test")
+  } else {
+    document.querySelector("ul").classList.remove("test")
+  }
+})
