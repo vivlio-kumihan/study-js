@@ -1951,15 +1951,27 @@
 //     document.querySelector("ul").classList.remove("test")
 //   }
 // })
-// どこまでスクロールしたかでCSSを切替える。
+
+// // どこまでスクロールしたかでCSSを切替える。
+// window.addEventListener("scroll", () => {
+//   let scroll = window.scrollY
+
+//   document.getElementById("scroll-position").textContent = scroll
+  
+//   if (scroll > 300) {
+//     document.querySelector("ul").classList.add("test")
+//   } else {
+//     document.querySelector("ul").classList.remove("test")
+//   }
+// })
+
 window.addEventListener("scroll", () => {
-  let scroll = window.scrollY
-
+  let scroll = window.pageYOffset
   document.getElementById("scroll-position").textContent = scroll
-
-  if (scroll > 300) {
-    document.querySelector("ul").classList.add("test")
-  } else {
-    document.querySelector("ul").classList.remove("test")
-  }
+  
+    if (scroll > 300) {
+      document.querySelector("ul").classList.add("test")
+    } else {
+      document.querySelector("ul").classList.remove("test")
+    }
 })
